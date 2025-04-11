@@ -1,0 +1,8 @@
+@layer utilities {
+    .auth-card {
+      @apply bg-white shadow-lg rounded-lg p-8 max-w-md mx-auto;
+    }
+    .input-field {
+      @apply border-2 border-gray-300 rounded p-2 w-full focus:border-blue-500;
+    }
+  }
