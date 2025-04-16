@@ -1,32 +1,148 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr" class="h-full bg-gray-900">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Top-typing-game home</title>
         <link href="../assets/css/global.css" rel="stylesheet">
         <link href="../assets/css/output/home-output.css" rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="../assets/js/home.js"></script>
+        <style>
+            .menu-item {
+                position: relative;
+                padding-bottom: 0.5rem;
+            }
+            
+            .menu-item::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background-color: #8b5cf6;
+                transition: width 0.3s ease;
+            }
+            
+            .menu-item:hover::after {
+                width: 100%;
+            }
+            
+            .menu-item.active::after {
+                width: 100%;
+            }
+        </style>
     </head>
     
-    <body>
-        <header>
-            <div class="bg-blue-500 text-white p-4">Test Tailwind</div>
-            <h1>Typing Test</h1>
-            <label for="mode">Select Mode:</label>
-            <select id="mode">
-                <option value="easy">Easy</option>
-                <option value="medium">Medium</option>
-                <option value="hard">Hard</option>
-            </select>
-        </header>
-    
-        <main>
-            <p id="word-display"></p>
-            <input type="text" id="input-field" autofocus>
-            <p id="results">Results : </p>
-        </main>
-    
-        <script type="module" src="../assets/js/home.js"></script>
+    <body class="h-full text-white">
+        <div class="container mx-auto p-4 h-full flex flex-col">
+            
+            <div class="flex flex-1 gap-8">
+                <!-- Sidebar Navigation -->
+                <aside class="w-64">
+                    <nav class="mb-8">
+                        <h3 class="text-lg font-semibold mb-4">Typing</h3>
+                        <ul class="space-y-2">
+                            <li class="menu-item active">
+                                <a href="#" class="block py-2" data-section="dashboard">Dashboard</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#" class="block py-2" data-section="test">Test</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#" class="block py-2" data-section="defis">Defis</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#" class="block py-2" data-section="apropos">À propos</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#" class="block py-2" data-section="theme">Thème</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    
+                    <div class="mt-8">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span>📌</span>
+                            <span>Mon profile</span>
+                        </div>
+                    </div>
+                </aside>
+                
+                <!-- Main Content -->
+                <main class="flex-1">
+                    <!-- Dashboard Section (default) -->
+                    <section id="dashboard-section" class="section-content">
+                        <h1 class="text-2xl font-bold">Top-typing game</h1>
+                        <h2 class="text-xl opacity-80">My dashboard</h2>
+
+                        <div class="bg-gray-800 rounded-lg p-6 max-w-2xl">
+                            <div class="mb-4">
+                                <p class="text-gray-400">Mon adresse email:</p>
+                                <p class="text-lg">exemplemailtoptyping@gmail.com</p>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <p class="text-gray-400">Ma vitesse de frappe en générale:</p>
+                                <p class="text-lg">25</p>
+                            </div>
+                            
+                            <div class="mt-8 space-y-4">
+                                <button class="text-red-400 hover:text-red-300 transition">Supprimer mon compte</button>
+                                <button class="block text-purple-400 hover:text-purple-300 transition">Contacter-nous</button>
+                                <button class="block text-gray-400 hover:text-gray-300 transition">se déconnecter</button>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Other Sections (hidden by default) -->
+                    <section id="test-section" class="section-content hidden">
+                        <h2 class="text-xl font-semibold mb-4">Test</h2>
+                        <p>Contenu de la section Test</p>
+                    </section>
+                    
+                    <section id="defis-section" class="section-content hidden">
+                        <h2 class="text-xl font-semibold mb-4">Defis</h2>
+                        <p>Contenu de la section Defis</p>
+                    </section>
+                    
+                    <section id="apropos-section" class="section-content hidden">
+                        <h2 class="text-xl font-semibold mb-4">À propos</h2>
+                        <p>Contenu de la section À propos</p>
+                    </section>
+                    
+                    <section id="theme-section" class="section-content hidden">
+                        <h2 class="text-xl font-semibold mb-4">Thème</h2>
+                        <p>Contenu de la section Thème</p>
+                    </section>
+
+                    <section id="profil-section" class="section-content hidden">
+                        <h1 class="text-2xl font-bold">Top-typing game</h1>
+                        <h2 class="text-xl opacity-80">My dashboard</h2>
+
+                        <div class="bg-gray-800 rounded-lg p-6 max-w-2xl">
+                            <div class="mb-4">
+                                <p class="text-gray-400">Mon adresse email:</p>
+                                <p class="text-lg">exemplemailtoptyping@gmail.com</p>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <p class="text-gray-400">Ma vitesse de frappe en générale:</p>
+                                <p class="text-lg">25</p>
+                            </div>
+                            
+                            <div class="mt-8 space-y-4">
+                                <button class="text-red-400 hover:text-red-300 transition">Supprimer mon compte</button>
+                                <button class="block text-purple-400 hover:text-purple-300 transition">Contacter-nous</button>
+                                <button class="block text-gray-400 hover:text-gray-300 transition">se déconnecter</button>
+                            </div>
+                        </div>
+                    </section>
+                </main>
+            </div>
+        </div>
     </body>
+    
 </html>
 

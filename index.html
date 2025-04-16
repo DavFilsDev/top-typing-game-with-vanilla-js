@@ -82,33 +82,50 @@
 </head>
 
 <body >
-    <header class="bg-[#142829] h-[10vh] w-full">
+    <header class="flex flex-row justify-between items-center bg-[#142829] h-[10vh] px-[40px]" >
+        <img src="/public/img/logo.png" alt="logo" class="w-20 h-20" />
         <nav
-          class="flex justify-between items-center px-[40px] py-[20px] w-full text-[20px]  text-white" id="navbar">
-          <img src="/public/img/logo.png" alt="logo" class="w-20 h-20" />
-            <div class="items-end flex justify-around w-[30%]"> <!-- w-30 change le header bien à droite -->
-            <lu class="flex justify-between items-center gap-7">
-              <li class="list-none hover:underline "><a href="">À propos</a></li>
-              <li class="list-none"><a href="" >Créer un compte</a></li>
-              <li class="list-none">
-                <button
-                  class="border-2 border-[#d0dddd] py-1 px-4 rounded-[20px] transition duration-200"
-                >
-                  Se connecter
-                </button>
-              </li>
-              <li class="list-none">
-                <button
-                  type="button"
-                  class="items-center border-2 border-[#d0dddd] px-5 rounded-[20px]"
-                >
-                  <i class="fa-solid fa-moon "></i>
-                </button>
-              </li>
-            </lu>
-          </div>
+          class="text-[20px] text-[#d0dddd] w-[30%]"
+          id="navbar"
+        >
+          <lu class="flex flex-row justify-between items-center">
+            <li class="list-none">
+              <a 
+                href="#" 
+                class="relative group"
+              >
+                À propos
+                <span class="absolute left-0 bottom-[-5px] w-0 h-[4px] bg-[#bc16a5] transition-all duration-300 group-hover:w-full group-focus:w-full group-active:w-full"></span>
+              </a>
+            </li>
+            
+            <li class="list-none" id="registerBtn">
+              <a 
+                href="#" 
+                class="relative group"
+              >
+                Créer un compte
+                <span class="absolute left-0 bottom-[-5px] w-0 h-[4px] bg-[#bc16a5] transition-all duration-300 group-hover:w-full group-focus:w-full group-active:w-full"></span>
+              </a>
+            </li>
+            <li class="list-none" id="loginBtn">
+              <button id="loginBtn_child"
+                class="border-2 border-[#d0dddd] py-1 px-4 rounded-[20px] hover:bg-[#bc16a5] focus:outline-none hover:border-[#bc16a5] transition duration-400"
+              >
+                Se connecter
+              </button>
+            </li>
+            <li class="list-none" id="modeActive">
+              <button
+                type="button"
+                class="items-center border-2 border-[#d0dddd] px-5 rounded-[20px] hover:text-black hover:bg-[#d0dddd] transition duration-400 w-20 h-10 text-center"
+              >
+                <i class="fa-solid fa-moon text-center"></i>
+              </button>
+            </li>
+          </lu>
         </nav>
-    </header>
+      </header>
 
     <main class="flex flex-col items-center gap-0 flex-grow h-[90vh] w-[100vw] bg-primary_dark">
         <h1 class="text-center text-4xl text-primary_color font-bold mt-[50px] mb-[20px]">Top-typing-game</h1>
