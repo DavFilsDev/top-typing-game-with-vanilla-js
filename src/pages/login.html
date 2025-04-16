@@ -13,34 +13,32 @@
     <script src="/src/assets/js/login.js"></script>
   </head>
   <body class="bg-[#142829] transition duration-300">
-    <header class="flex flex-row justify-between items-center bg-[#142829] h-[10vh] px-[40px]" >
+    <header
+      class="flex flex-row justify-between items-center bg-[#142829] h-[10vh] px-[40px] sticky "
+    >
       <img src="/public/img/logo.png" alt="logo" class="w-20 h-20" />
-      <nav
-        class="text-[20px] text-[#d0dddd] w-[30%]"
-        id="navbar"
-      >
+      <nav class="text-[20px] text-[#d0dddd] w-[30%]" id="navbar">
         <lu class="flex flex-row justify-between items-center">
-          <li class="list-none">
-            <a 
-              href="#" 
-              class="relative group"
-            >
+          <li class="list-none" id="aboutBtn">
+            <a href="#" class="relative group">
               À propos
-              <span class="absolute left-0 bottom-[-5px] w-0 h-[4px] bg-[#bc16a5] transition-all duration-300 group-hover:w-full group-focus:w-full group-active:w-full"></span>
+              <span
+                class="absolute left-0 bottom-[-5px] w-0 h-[4px] bg-[#bc16a5] transition-all duration-300 group-hover:w-full group-focus:w-full group-active:w-full"
+              ></span>
             </a>
           </li>
-          
+
           <li class="list-none" id="registerBtn">
-            <a 
-              href="#" 
-              class="relative group"
-            >
+            <a href="#" class="relative group">
               Créer un compte
-              <span class="absolute left-0 bottom-[-5px] w-0 h-[4px] bg-[#bc16a5] transition-all duration-300 group-hover:w-full group-focus:w-full group-active:w-full"></span>
+              <span
+                class="absolute left-0 bottom-[-5px] w-0 h-[4px] bg-[#bc16a5] transition-all duration-300 group-hover:w-full group-focus:w-full group-active:w-full"
+              ></span>
             </a>
           </li>
           <li class="list-none" id="loginBtn">
-            <button id="loginBtn_child"
+            <button
+              id="loginBtn_child"
               class="border-2 border-[#d0dddd] py-1 px-4 rounded-[20px] hover:bg-[#bc16a5] focus:outline-none hover:border-[#bc16a5] transition duration-400"
             >
               Se connecter
@@ -58,10 +56,9 @@
       </nav>
     </header>
     <main class="h-[90vh] bg-[#142829] flex justify-center items-center">
-     
       <div
         id="loginSection"
-        class="bg-[#142829] shadow-[#BC16A5] rounded-lg w-full max-w-md p-8 m-auto shadow-[0_0_50px_rgba(10,10,10,10)]"
+        class="hidden bg-[#142829] shadow-[#BC16A5] rounded-lg w-full max-w-md p-8 m-auto shadow-[0_0_50px_rgba(10,10,10,10)]"
       >
         <i class="fa-solid fa-user text-[50px] py-4 flex justify-center"></i>
 
@@ -134,7 +131,6 @@
           </div>
 
           <div class="mt-6 flex-column justify-center items-center">
-          
             <div class="flex justify-center">
               <a
                 href=""
@@ -148,11 +144,10 @@
               >
             </div>
 
-           
             <div class="flex justify-center items-center">
               <a
                 href="#"
-                class=" inline-flex justify-center items-center py-2 px-7 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-[#d0dddd] focus:outline-none transition mt-3"
+                class="inline-flex justify-center items-center py-2 px-7 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-[#d0dddd] focus:outline-none transition mt-3"
               >
                 <i
                   class="fab fa-github text-white-50 border border-black rounded-[20px] w-fit px-2 bg-black text-lg mr-2"
@@ -172,7 +167,10 @@
         </div>
       </div>
 
-      <div id="registerSection"        class="bg-[#142829] shadow-[#BC16A5] rounded-lg w-full max-w-md p-8 m-auto shadow-[0_0_50px_rgba(10,10,10,10)] hidden"      >
+      <div
+        id="registerSection"
+        class="bg-[#142829] shadow-[#BC16A5] rounded-lg w-full max-w-md p-8 m-auto shadow-[0_0_50px_rgba(10,10,10,10)] hidden"
+      >
         <div class="flex justify-center items-center">
           <p class="text-white py-2 px-6 transition r">Créer de compte</p>
         </div>
@@ -244,34 +242,281 @@
             </button>
           </div>
         </form>
-      
-       
       </div>
 
-       <!-- ABOUT SECTION HTML -->
-       <div class="grid grid-cols-2 gap-4 h-screen">
-        <!-- Colonne Image -->
-        <div class="bg-gray-200 flex items-center justify-center">
-          <img 
-            src="https://via.placeholder.com/800x600" 
-            alt="Description de l'image"
-            class="object-cover w-full h-full"
-          >
-        </div>
-        
-        <!-- Colonne Description -->
-        <div class="bg-gray-100 p-8 flex flex-col justify-center">
-          <h2 class="text-3xl font-bold mb-4">Titre de la section</h2>
-          <p class="text-lg mb-6">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. 
-            Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus 
-            rhoncus ut eleifend nibh porttitor.
+      <!-- ABOUT SECTION HTML -->
+       
+       <div class="w-fit h-[90vh] mt-10  bg-primary_dark  "  >
+        <div
+        class="grid-row-2 w-[80%] h-[85%] mx-auto border-[1px] border-primary_color py-[4rem] " id="about"
+       
+      >
+        <div class="pb-[25px]">
+          <h1 class="text-center text-primary_color text-[3rem] font-bold">
+            Top-typing TEST
+          </h1>
+          <p class="text-center text-primary_light text-[2rem]">
+            "Améliorer votre vitesse et précision de frappe grâce à des défis
+            ludiques"
           </p>
-          <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-lg w-fit transition duration-300">
-            En savoir plus
-          </button>
+        </div>
+        <div class="flex justify-evenly text-primary_light h-[50%] pt-[25px]">
+          <img
+            src="/public/img/keyboardYoupi.png"
+            alt="keyboard"
+            class="w-fit h-fit"
+          />
+          <div
+            class="w-[40%] flex flex-col gap-y-[2rem] text-[21px] text-justify"
+          >
+            <p>
+              Top-typing est bien plus qu'un simple typing test en ligne mais
+              offre une expérience immersive pour maîtriser le clavier comme un
+              pro.
+            </p>
+            <p>
+              Que tu sois débutant ou pro du clavier, yu trouveras ici de qui
+              perfectionner ta vitesse de frappe (jusqu’à + 100 WPM)
+            </p>
+            <p>
+              Notre application aide les étudiants et professionnels à maîtriser
+              le clavier grâce à des exercices personnalisés et des statistiques
+              détaillées.
+            </p>
+
+            <button
+              type="submit"
+              class="bg-primary_color text-primary_light w-[30%] py-2 px-6 rounded-md hover:bg-primary_light hover:text-primary_color focus:outline-none focus:ring-2 focus:ring-primary_color focus:ring-offset-2 transition r"
+            >
+              Faire un défi
+            </button>
+          </div>
+        </div>
+     
+       
+       </div>
+       <div class="relative h-32 w-32 mx-auto" id="aboutIcon">
+       
+        <i class="fas fa-chevron-down text-[5rem] absolute top-0 animate-chevron-drop bg-gradient-to-b from-primary_color to-primary_light bg-clip-text text-transparent"></i>
+        <i class="fas fa-chevron-down text-[5rem] absolute top-[1.5rem] animate-chevron-drop animation-delay-200 bg-gradient-to-b from-primary_color to-primary_light bg-clip-text text-transparent"></i>
+       </div>
+
+       <!-- ABOUT TECHNICALS SECTION -->
+      <div id="aboutTechnical" class="h-[80vh] w-[80%] mx-auto flex-column bg-primary_dark ">
+        <div>
+          <div class="flex flex-row justify-center items-center">
+            <h1 class="pb-[3rem] text-4xl text-primary_light">
+              Fonctionalités clés
+            </h1>
+            <p
+              class="absolute border-2 border-primary_color w-[10%] ml-[1rem]"
+            ></p>
+          </div>
+
+          <div
+            class="mt-6 px-[4rem] space-y-6 lg:grid lg:grid-cols-3 lg:space-y-0 lg:gap-x-[7rem]"
+          >
+            <div class="group relative">
+              <img
+                src="https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-02-edition-01.jpg"
+                alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug."
+                class="w-full h-[60%] rounded-tr-[3rem] rounded-bl-[3rem] bg-white object-cover group-hover:opacity-75 max-sm:h-80 sm:aspect-2/1 lg:aspect-square"
+              />
+              <h3 class="mt-6 text-sm text-primary_light leading-10">
+                <p class="text-base font-semibold text-[30px]">Mode défi</p>
+                <p>
+                  <span class="absolute inset-0"></span>
+                  Textes chronométrés avec niveaux de difficulté
+                </p>
+              </h3>
+            </div>
+            <div class="group relative">
+              <img
+                src="https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-02-edition-01.jpg"
+                alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug."
+                class="w-full h-[60%] rounded-tr-[3rem] rounded-bl-[3rem] bg-white object-cover group-hover:opacity-75 max-sm:h-80 sm:aspect-2/1 lg:aspect-square"
+              />
+              <h3 class="mt-6 text-sm text-primary_light leading-10">
+                <p class="text-base font-semibold text-[30px]">
+                  Tableaux de bord
+                </p>
+                <p>
+                  <span class="absolute inset-0"></span>
+                  Suivi des progrès (WPM, précision, historique)
+                </p>
+              </h3>
+            </div>
+            <div class="group relative">
+              <img
+                src="https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-02-edition-01.jpg"
+                alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug."
+                class="w-full h-[60%] rounded-tr-[3rem] rounded-bl-[3rem] bg-white object-cover group-hover:opacity-75 max-sm:h-80 sm:aspect-2/1 lg:aspect-square"
+              />
+              <h3 class="mt-6 text-sm text-primary_light leading-10">
+                <p class="text-base font-semibold text-[30px]">Classements</p>
+                <p>
+                  <span class="absolute inset-0"></span>
+                  Compétition avec d'autres utilisateurs
+                </p>
+              </h3>
+            </div>
+          </div>
+        </div>
+        <div class="flex-column mx-auto w-[80vw]">
+          <div class="flex flex-row justify-center items-center">
+            <h1 class="pb-[3rem] text-4xl text-primary_light">
+              Stack technique
+            </h1>
+            <p
+              class="absolute border-2 border-primary_color w-[10%] ml-[1rem]"
+            ></p>
+          </div>
+
+          <div
+            class="mt-6 px-[4rem] space-y-6 lg:grid lg:grid-cols-3 lg:space-y-0 lg:gap-x-[7rem]"
+          >
+            <div class="group relative">
+              <img
+                src="https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-02-edition-01.jpg"
+                alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug."
+                class="w-full h-[70%] rounded-lg bg-white object-cover group-hover:opacity-75 max-sm:h-80 sm:aspect-2/1 lg:aspect-square"
+              />
+              <p
+                class="text-center pt-5 text-primary_light font-semibold text-[30px]"
+              >
+                HTML
+              </p>
+            </div>
+            <div class="group relative">
+              <img
+                src="https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-02-edition-01.jpg"
+                alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug."
+                class="w-full h-[70%] rounded-lg bg-white object-cover group-hover:opacity-75 max-sm:h-80 sm:aspect-2/1 lg:aspect-square"
+              />
+              <p
+                class="text-center pt-5 text-primary_light font-semibold text-[30px]"
+              >
+                TAILWINDCSS
+              </p>
+            </div>
+            <div class="group relative">
+              <img
+                src="https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-02-edition-01.jpg"
+                alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug."
+                class="w-full h-[70%] rounded-lg bg-white object-cover group-hover:opacity-75 max-sm:h-80 sm:aspect-2/1 lg:aspect-square"
+              />
+              <p
+                class="text-center pt-5 text-primary_light font-semibold text-[30px]"
+              >
+                SUPABASE
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- TEAM DEVELOPPER -->
+        <div class="flex flex-col mt-[2rem]">
+          <div class="flex flex-row justify-center items-center">
+            <h1 class="pb-[3rem] text-4xl text-primary_light">Équipes</h1>
+            <p
+              class="absolute border-2 border-primary_color w-[5%] ml-[1rem]"
+            ></p>
+          </div>
+          <div class="flex flex-row w-[50vw] items-center mx-auto">
+            <div
+              class="flex flex-col items-center justify-center p-6 max-w-md mx-auto border-2 border-primary_color rounded-[15px] pb-[4rem] mb-10"
+            >
+              <div class="relative mb-6">
+                <img
+                  src="/public/img/keyboardYoupi.png"
+                  alt="Application de dactylographie"
+                  class="rounded-full w-40 h-40 object-cover shadow-lg"
+                />
+              </div>
+
+              <p class="text-center text-primary_light text-lg leading-relaxed">
+                Notre application aide les étudiants et professionnels à
+                maîtriser le clavier grâce à des exercices personnalisés et des
+                statistiques détaillées.
+              </p>
+            </div>
+
+            <div
+              class="flex flex-col items-center justify-center p-6 max-w-md mx-auto border-2 border-primary_color rounded-[15px] pb-[4rem] mb-10"
+            >
+              <div class="relative mb-6">
+                <img
+                  src="/public/img/keyboardYoupi.png"
+                  alt="Application de dactylographie"
+                  class="rounded-full w-40 h-40 object-cover shadow-lg"
+                />
+              </div>
+
+              <p class="text-center text-primary_light text-lg leading-relaxed">
+                Notre application aide les étudiants et professionnels à
+                maîtriser le clavier grâce à des exercices personnalisés et des
+                statistiques détaillées.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTACT US -->
+        <div class=" mt-[5rem] flex flex-col justify-center items-center">
+          <h1 class="pb-[2rem] text-4xl text-primary_light">Contactez-nous</h1>
+          <p
+            class="absolute border-2 border-primary_color w-[10%] ml-[1rem] leading-[4rem]"
+          ></p>
+          <p class="text-primary_light text-[20px]">
+            Veuillez remplir ici si vous voulez nous contacter
+          </p>
+        </div>
+        <div class="max-w-2xl mx-auto p-6">
+         
+          
+          <form class="space-y-4">
+            <!-- Champ Email -->
+            <div>
+              <label for="email" class="block text-sm font-medium text-primary_light mb-1">Email</label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email"
+                required
+                class="block w-full px-4 py-2 border border-gray-300  focus:outline-none transition"
+                placeholder=""
+              >
+            </div>
+            
+            <!-- Champ Message -->
+            <div>
+              <label for="message" class="block text-sm font-medium text-primary_light mb-1">Message</label>
+              <textarea 
+                id="message" 
+                name="message"
+                rows="4"
+                required
+                class="block w-full px-4 py-2 border border-gray-300  focus:outline-none transition"
+                placeholder=""
+              ></textarea>
+            </div>
+            
+            <!-- Bouton Envoyer -->
+            <div class="flex justify-center pt-2">
+              <button 
+                type="submit"
+                class="px-6 py-2 mb-[4rem] bg-primary_color text-white font-medium rounded-md hover:bg-primary_light hover:text-primary_color focus:outline-none focus:ring-2 focus:ring-primary_color focus:ring-offset-2 transition"
+              >
+                Envoyer
+              </button>
+            </div>
+          </form>
         </div>
       </div>
+       </div>
+     
+
+      
     </main>
   </body>
 </html>

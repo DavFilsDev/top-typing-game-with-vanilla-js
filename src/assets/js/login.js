@@ -3,12 +3,15 @@ document.addEventListener('DOMContentLoaded', function() {
   const themeToggle = document.querySelector('#modeActive');
   const themeIcon=  document.querySelector('.fa-moon');
   const body = document.body;
-  const loginSection=document.getElementById('loginSection')
+  const loginSection=document.getElementById('loginSection');
     const navbar = document.querySelector('#navbar')
     const loginBtn = document.getElementById('loginBtn');
-    const loginBtnChild= document.getElementById('loginBtn_child')
+    const loginBtnChild= document.getElementById('loginBtn_child');
   const registerBtn = document.getElementById('registerBtn');
-  
+  const about= document.getElementById('about');
+  const aboutBtn=  document.getElementById('aboutBtn');
+  const aboutIcon = document.getElementById('aboutIcon')
+  const aboutTechnical = document.getElementById('aboutTechnical')
   
   
  loginBtn.addEventListener('click',()=>{
@@ -16,6 +19,9 @@ document.addEventListener('DOMContentLoaded', function() {
   loginBtnChild.classList.add('bg-[#bc16a5]', 'border-[#bc16a5]')
    registerSection.classList.add('hidden')
    loginSection.classList.remove('hidden')
+   about.classList.add('hidden')
+   aboutTechnical.classList.add('hidden')
+   aboutIcon.classList.add('hidden')
  });
  registerBtn.addEventListener('click',()=>{
   
@@ -23,8 +29,25 @@ document.addEventListener('DOMContentLoaded', function() {
   loginBtnChild.classList.remove('bg-[#bc16a5]', 'border-[#bc16a5]')
   loginSection.classList.add('hidden')
   registerSection.classList.remove('hidden')
+  about.classList.add('hidden')
+  aboutTechnical.classList.add('hidden')
+  aboutIcon.classList.add('hidden')
+})
+aboutBtn.addEventListener('click',()=>{
+  
+  loginBtnChild.classList.add('border-[#d0dddd]')
+  loginBtnChild.classList.remove('bg-[#bc16a5]', 'border-[#bc16a5]')
+  loginSection.classList.add('hidden')
+  registerSection.classList.add('hidden')
+  about.classList.remove('hidden')
+  aboutIcon.classList.remove('hidden')
 
+})
 
+aboutIcon.addEventListener('click',()=>{
+  about.classList.add('hidden')
+  aboutIcon.classList.add('hidden')
+  aboutTechnical.classList.remove('hidden')
 })
 
   let isDarkMode = true; 

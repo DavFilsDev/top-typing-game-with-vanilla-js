@@ -13,8 +13,10 @@ export default {
         'primary_light': '#d0dddd',
         'red_color': '#f93b3b',
         'green_color': '#1cc74f'
-      }
+      },
+ 
     },
   },
+
   plugins: [],
 }
