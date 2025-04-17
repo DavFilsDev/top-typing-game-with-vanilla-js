@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const themeIcon=  document.querySelector('.fa-moon');
   const body = document.body;
   const loginSection=document.getElementById('loginSection');
-    const navbar = document.querySelector('#navbar')
+    const navbar = document.querySelector('#navbar');
     const loginBtn = document.getElementById('loginBtn');
     const loginBtnChild= document.getElementById('loginBtn_child');
   const registerBtn = document.getElementById('registerBtn');
@@ -41,7 +41,7 @@ aboutBtn.addEventListener('click',()=>{
   registerSection.classList.add('hidden')
   about.classList.remove('hidden')
   aboutIcon.classList.remove('hidden')
-
+ aboutTechnical.classList.remove('hidden')
 })
 
 aboutIcon.addEventListener('click',()=>{

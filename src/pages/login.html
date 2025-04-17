@@ -14,7 +14,7 @@
   </head>
   <body class="bg-[#142829] transition duration-300">
     <header
-      class="flex flex-row justify-between items-center bg-[#142829] h-[10vh] px-[40px] sticky "
+      class="flex flex-row justify-between items-center bg-[#142829] h-[10vh] px-[40px] fixed top-0 left-0 right-0 z-50 "
     >
       <img src="/public/img/logo.png" alt="logo" class="w-20 h-20" />
       <nav class="text-[20px] text-[#d0dddd] w-[30%]" id="navbar">
@@ -58,7 +58,7 @@
     <main class="h-[90vh] bg-[#142829] flex justify-center items-center">
       <div
         id="loginSection"
-        class="hidden bg-[#142829] shadow-[#BC16A5] rounded-lg w-full max-w-md p-8 m-auto shadow-[0_0_50px_rgba(10,10,10,10)]"
+        class="hidden bg-[#142829] shadow-[#BC16A5] rounded-lg w-full max-w-md p-8 m-auto shadow-[0_0_50px_rgba(10,10,10,10)] mt-[10rem]"
       >
         <i class="fa-solid fa-user text-[50px] py-4 flex justify-center"></i>
 
@@ -246,16 +246,16 @@
 
       <!-- ABOUT SECTION HTML -->
        
-       <div class="w-fit h-[90vh] mt-10  bg-primary_dark  "  >
+  <div class="w-fit h-[90vh] mt-[15rem]  bg-primary_dark  "  >
         <div
-        class="grid-row-2 w-[80%] h-[85%] mx-auto border-[1px] border-primary_color py-[4rem] " id="about"
+        class="grid-row-2 w-[70%] h-[65%] mx-auto border-[1px] border-primary_color py-[1rem] mt-20" id="about"
        
       >
         <div class="pb-[25px]">
-          <h1 class="text-center text-primary_color text-[3rem] font-bold">
+          <h1 class="text-center text-primary_color text-[2.5rem] font-bold">
             Top-typing TEST
           </h1>
-          <p class="text-center text-primary_light text-[2rem]">
+          <p class="text-center text-primary_light text-[1.5rem]">
             "Améliorer votre vitesse et précision de frappe grâce à des défis
             ludiques"
           </p>
@@ -264,10 +264,10 @@
           <img
             src="/public/img/keyboardYoupi.png"
             alt="keyboard"
-            class="w-fit h-fit"
+          
           />
           <div
-            class="w-[40%] flex flex-col gap-y-[2rem] text-[21px] text-justify"
+            class="w-[60%] flex flex-col gap-y-[2rem] text-[18px] text-justify"
           >
             <p>
               Top-typing est bien plus qu'un simple typing test en ligne mais
@@ -286,7 +286,7 @@
 
             <button
               type="submit"
-              class="bg-primary_color text-primary_light w-[30%] py-2 px-6 rounded-md hover:bg-primary_light hover:text-primary_color focus:outline-none focus:ring-2 focus:ring-primary_color focus:ring-offset-2 transition r"
+              class="bg-primary_color text-primary_light w-[27%] py-2 px-6 rounded-md hover:bg-primary_light hover:text-primary_color focus:outline-none focus:ring-2 focus:ring-primary_color focus:ring-offset-2 transition r"
             >
               Faire un défi
             </button>
@@ -295,7 +295,7 @@
      
        
        </div>
-       <div class="relative h-32 w-32 mx-auto" id="aboutIcon">
+       <div class="relative h-[30vh] w-32 mx-auto top-10" id="aboutIcon">
        
         <i class="fas fa-chevron-down text-[5rem] absolute top-0 animate-chevron-drop bg-gradient-to-b from-primary_color to-primary_light bg-clip-text text-transparent"></i>
         <i class="fas fa-chevron-down text-[5rem] absolute top-[1.5rem] animate-chevron-drop animation-delay-200 bg-gradient-to-b from-primary_color to-primary_light bg-clip-text text-transparent"></i>
