@@ -42,9 +42,9 @@
         </style>
     </head>
     
-    <body class=" flex flex-row h-full justify-between items-center px-2 w-full bg-primary_dark">
+    <body class=" flex flex-row h-full justify-between items-center px-2 w-full bg-[#142829]">
         <!-- Sidebar Navigation -->
-        <aside class="flex flex-col justify-between items-center shadow-[4px_4px_20px_0_rgba(188,22,165,0.5)] w-[14.5%] h-[99%] bg-primary_dark border-2 border-white rounded-lg">
+        <aside class="flex flex-col justify-between items-center shadow-[4px_4px_20px_0_rgba(188,22,165,0.5)] w-[14.5%] h-[99%] border-2 border-white rounded-lg">
             <div class="flex flex-col justify-between items-center h-[60%] w-full p-10">
                 <img src="/public/img/logo.png" alt="logo" class="w-[125px] h-[125px]" />
                 <nav>
@@ -89,7 +89,7 @@
             </div>
               
             <div class="profile-button-container flex justify-around items-center w-full h-[15%]">
-                <div class="profile-button flex justify-around items-center text-white font-bold border-2 border-white hover:border-primary_color py-1 px-1 rounded-xl w-[80%]">
+                <div class="profile-button flex justify-around items-center text-white font-bold border-2 border-white hover:border-primary_color py-1 px-2 rounded-xl w-[80%] text-[20px]">
                     <i class="fas fa-user-circle text-4xl"></i>
                     <span>Mon profile</span>
                 </div>
@@ -101,8 +101,8 @@
             <!-- Dashboard Section (default) -->
             <section id="dashboard-section" class="section-content w-full h-full">
                 <div class="flex flex-col justify-around items-center w-full h-[13%]">
-                    <h1 class="text-6xl text-primary_light [text-shadow:_4px_4px_10px_rgba(188,22,165,1)]">Top-typing game</h1>
-                    <h2 class="text-xl text-primary_color">My dashboard</h2>
+                    <h1 class="text-6xl text-[#bc16a5] [text-shadow:_4px_4px_10px_rgba(188,22,165,1)]">Top-typing game</h1>
+                    <h2 class="text-1xl text-white">My dashboard</h2>
                 </div>
             
                 <div class="w-full h-[87%]">
@@ -113,8 +113,8 @@
             <!-- Other Sections (hidden by default) -->
             <section id="test-section" class="section-content w-full h-full hidden">
                 <div class="flex flex-col justify-around items-center w-full h-[13%]">
-                    <h1 class="text-6xl text-primary_light [text-shadow:_4px_4px_10px_rgba(188,22,165,1)]">Top-typing game</h1>
-                    <h2 class="text-xl text-primary_color">Test</h2>
+                    <h1 class="text-6xl text-[#bc16a5] [text-shadow:_4px_4px_10px_rgba(188,22,165,1)]">Top-typing game</h1>
+                    <h2 class="text-1xl text-white">Test</h2>
                 </div>
             
                 <div class="w-full h-[87%]">
@@ -124,8 +124,8 @@
             
             <section id="defis-section" class="section-content w-full h-full hidden">
                 <div class="flex flex-col justify-around items-center w-full h-[13%]">
-                    <h1 class="text-6xl text-primary_light [text-shadow:_4px_4px_10px_rgba(188,22,165,1)]">Top-typing game</h1>
-                    <h2 class="text-xl text-primary_color">Les défis</h2>
+                    <h1 class="text-6xl text-[#bc16a5] [text-shadow:_4px_4px_10px_rgba(188,22,165,1)]">Top-typing game</h1>
+                    <h2 class="text-1xl text-white">Les défis</h2>
                 </div>
             
                 <div class="w-full h-[87%]">
@@ -135,8 +135,8 @@
             
             <section id="apropos-section" class="section-content w-full h-full hidden">
                 <div class="flex flex-col justify-around items-center w-full h-[13%]">
-                    <h1 class="text-6xl text-primary_light [text-shadow:_4px_4px_10px_rgba(188,22,165,1)]">Top-typing game</h1>
-                    <h2 class="text-xl text-primary_color">À propos</h2>
+                    <h1 class="text-6xl text-[#bc16a5] [text-shadow:_4px_4px_10px_rgba(188,22,165,1)]">Top-typing game</h1>
+                    <h2 class="text-1xl text-white">À propos</h2>
                 </div>
             
                 <div class="w-full h-[87%]">
@@ -146,28 +146,38 @@
 
             <section id="profil-section" class="section-content w-full h-full hidden">
                 <div class="flex flex-col justify-around items-center w-full h-[13%]">
-                    <h1 class="text-6xl text-primary_light [text-shadow:_4px_4px_10px_rgba(188,22,165,1)]">Top-typing game</h1>
-                    <h2 class="text-xl text-primary_color">Mon profile</h2>
+                    <h1 class="text-6xl text-[#bc16a5] [text-shadow:_4px_4px_10px_rgba(188,22,165,1)]">Top-typing game</h1>
+                    <h2 class="text-1xl text-white">Mon profil</h2>
                 </div>
             
-                <div class="w-full h-[87%]">
-                    <!-- <div class="bg-gray-800 rounded-lg p-6 max-w-2xl">
-                        <div class="mb-4">
-                            <p class="text-gray-400">Mon adresse email:</p>
-                            <p class="text-lg">exemplemailtoptyping@gmail.com</p>
-                        </div>
+                <div class="flex flex-col justify-between items-center w-full h-[87%] py-[5%]">
+                    <div class="w-[150px] h-[150px] bg-white rounded-full">
                         
-                        <div class="mb-4">
-                            <p class="text-gray-400">Ma vitesse de frappe en générale:</p>
-                            <p class="text-lg">25</p>
+                    </div>
+
+                    <div class="flex flex-col justify-between py-[10px] items-center w-full h-[50%]">
+                        <div class="py-6 px-3 w-[60%] bg-white rounded-md">
+                            <p class=" text-gray-400 text-2xl"><strong class="text-[#142829]">Mon adresse email: </strong> exemplemailtoptyping@gmail.com</p>
                         </div>
+                        <div class="py-6 px-3 w-[60%] bg-white rounded-md">
+                            <p class="text-gray-400 text-2xl"><strong class="text-[#142829]">Ma vitesse de frappe en générale: </strong> 25</p>
+                        </div>
+                        <div class=" w-[60%]">
+                            <button class="w-[40%] py-3 px-3 text-1xl border-2 border-[#f93b3b] text-2xl text-[#f93b3b] rounded-md">Supprimer mon compte</button>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col justify-between items-center h-[20%] w-[30%]">
+                        <button class="border-2 text-xl text-[#bc16a5] bg-[#d0dddd] py-1 px-4 rounded-[20px] transition-transform duration-500 ease-in-out hover:scale-105">
+                            Nous-contacter
+                        </button>
                         
-                        <div class="mt-8 space-y-4">
-                            <button class="text-red-400 hover:text-red-300 transition">Supprimer mon compte</button>
-                            <button class="block text-purple-400 hover:text-purple-300 transition">Contacter-nous</button>
-                            <button class="block text-gray-400 hover:text-gray-300 transition">se déconnecter</button>
-                        </div>
-                    </div> -->
+                        <button class="flex flex-row justify-around items-center font-bold border-2 w-[60%] border-[#d0dddd] bg-[#bc16a5] text-white py-2 px-5 rounded-[20px] text-2xl">
+                            <i class="fa-solid fa-right-from-bracket text-4xl"></i>
+                            se déconnecter
+                        </button>
+                    </div>
+
                 </div>
             </section>
         </main>
