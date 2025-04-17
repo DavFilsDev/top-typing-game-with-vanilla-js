@@ -23,6 +23,8 @@ document.addEventListener('DOMContentLoaded', function() {
    aboutTechnical.classList.add('hidden')
    aboutIcon.classList.add('hidden')
  });
+
+
  registerBtn.addEventListener('click',()=>{
   
   loginBtnChild.classList.add('border-[#d0dddd]')

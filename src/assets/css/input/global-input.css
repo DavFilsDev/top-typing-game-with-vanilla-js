@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* FICHIERS CSS */
+@import "./home-input.css";
+@import "./index-input.css";
+@import "./login-input.css";
+
 /* Composants réutilisables */
 .btn-primary {
   @apply bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition;

@@ -8,6 +8,7 @@
     "install:all": "npm install && npx tailwindcss init",
     "dev:index": "tailwindcss -i ./src/assets/css/input/index-input.css -o ./src/assets/css/output/index-output.css --watch",
     "dev:login": "tailwindcss -i ./src/assets/css/input/login-input.css -o ./src/assets/css/output/login-output.css --watch",
+     "dev:all": "tailwindcss -i ./src/assets/css/input/global-input.css -o ./src/assets/css/output/global-output.css --watch",
     "dev:home": "tailwindcss -i ./src/assets/css/input/home-input.css -o ./src/assets/css/output/home-output.css --watch",
     "build": "tailwindcss -i ./src/assets/css/global.css -o ./dist/global.css --minify"
   },

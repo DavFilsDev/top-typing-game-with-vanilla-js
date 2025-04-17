@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Top-typing-game login</title>
+    <link rel="stylesheet" href="/src/assets/css/output/global-output.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link href="../assets/css/global.css" rel="stylesheet" />
-    <link href="../assets/css/output/login-output.css" rel="stylesheet" />
-    <script src="/src/assets/js/login.js"></script>
+  
+    <script src="/src/assets/js/login.js" defer></script>
   </head>
   <body class="bg-[#142829] transition duration-300">
     <header
@@ -20,7 +20,7 @@
       <nav class="text-[20px] text-[#d0dddd] w-[30%]" id="navbar">
         <lu class="flex flex-row justify-between items-center">
           <li class="list-none" id="aboutBtn">
-            <a href="#" class="relative group">
+            <a href="#" class="relative group"  data-target="apropos">
               À propos
               <span
                 class="absolute left-0 bottom-[-5px] w-0 h-[4px] bg-[#bc16a5] transition-all duration-300 group-hover:w-full group-focus:w-full group-active:w-full"
@@ -29,23 +29,24 @@
           </li>
 
           <li class="list-none" id="registerBtn">
-            <a href="#" class="relative group">
+            <a href="#" class="relative group"  data-target="creercompte">
               Créer un compte
               <span
                 class="absolute left-0 bottom-[-5px] w-0 h-[4px] bg-[#bc16a5] transition-all duration-300 group-hover:w-full group-focus:w-full group-active:w-full"
               ></span>
             </a>
           </li>
-          <li class="list-none" id="loginBtn">
+          <li class="list-none" id="loginBtn" >
             <button
+               data-target="connexion"
               id="loginBtn_child"
               class="border-2 border-[#d0dddd] py-1 px-4 rounded-[20px] hover:bg-[#bc16a5] focus:outline-none hover:border-[#bc16a5] transition duration-400"
             >
               Se connecter
             </button>
           </li>
-          <li class="list-none" id="modeActive">
-            <button
+          <li class="list-none" id="modeActive" >
+            <button 
               type="button"
               class="items-center border-2 border-[#d0dddd] px-5 rounded-[20px] hover:text-black hover:bg-[#d0dddd] transition duration-400 w-20 h-10 text-center"
             >
@@ -56,6 +57,7 @@
       </nav>
     </header>
     <main class="h-[90vh] bg-[#142829] flex justify-center items-center">
+      <!-- LOGIN SECTION -->
       <div
         id="loginSection"
         class="hidden bg-[#142829] shadow-[#BC16A5] rounded-lg w-full max-w-md p-8 m-auto shadow-[0_0_50px_rgba(10,10,10,10)] mt-[10rem]"
@@ -167,6 +169,7 @@
         </div>
       </div>
 
+      <!-- CREATE ACOUNT -->
       <div
         id="registerSection"
         class="bg-[#142829] shadow-[#BC16A5] rounded-lg w-full max-w-md p-8 m-auto shadow-[0_0_50px_rgba(10,10,10,10)] hidden"
@@ -288,7 +291,7 @@
               type="submit"
               class="bg-primary_color text-primary_light w-[27%] py-2 px-6 rounded-md hover:bg-primary_light hover:text-primary_color focus:outline-none focus:ring-2 focus:ring-primary_color focus:ring-offset-2 transition r"
             >
-              Faire un défi
+              <a href="/index.html">Faire un Test</a> 
             </button>
           </div>
         </div>
