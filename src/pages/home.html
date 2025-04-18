@@ -6,7 +6,6 @@
         <title>Top-typing-game home</title>
        <link rel="stylesheet" href="../assets/css/global-output.css">
         <script src="https://cdn.tailwindcss.com"></script>
-        <script src="../assets/js/home.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css">
         <style>
@@ -162,9 +161,12 @@
                         <div class="py-6 px-3 w-[60%] bg-white rounded-md">
                             <p class="text-gray-400 text-2xl"><strong class="text-[#142829]">Ma vitesse de frappe en générale: </strong> 25</p>
                         </div>
-                        <div class=" w-[60%]">
-                            <button class="w-[40%] py-3 px-3 text-1xl border-2 border-[#f93b3b] text-2xl text-[#f93b3b] rounded-md">Supprimer mon compte</button>
-                        </div>
+                        <button 
+                            id="delete-account-btn"
+                            class="w-[40%] py-3 px-3 text-1xl border-2 border-[#f93b3b] text-2xl text-[#f93b3b] rounded-md"
+                        >
+                            Supprimer mon compte
+                        </button>
                     </div>
 
                     <div class="flex flex-col justify-between items-center h-[20%] w-[30%]">
@@ -172,15 +174,26 @@
                             Nous-contacter
                         </button>
                         
-                        <button class="flex flex-row justify-around items-center font-bold border-2 w-[60%] border-[#d0dddd] bg-[#bc16a5] text-white py-2 px-5 rounded-[20px] text-2xl">
+                        <button 
+                            id="logout-btn"
+                            class="flex flex-row justify-around items-center font-bold border-2 w-[60%] border-[#d0dddd] bg-[#bc16a5] text-white py-2 px-5 rounded-[20px] text-2xl"
+                        >
                             <i class="fa-solid fa-right-from-bracket text-4xl"></i>
                             se déconnecter
-                        </button>
+                      </button>
                     </div>
-
+                    <div id="profile-loading" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+                        <div class="text-white text-2xl">Chargement en cours...</div>
+                    </div>
+                    <div id="profile-error" class="hidden text-red-500 text-center py-2"></div>
                 </div>
             </section>
         </main>
+
+        <script src="../assets/js/supabase.js" type="module"></script>
+        <script src="../assets/js/auth-check.js" type="module"></script>
+        <script src="../assets/js/home.js" type="module"></script>
+        <script src="../assets/js/auth-home.js" type="module"></script>
     </body>
 </html>
 
