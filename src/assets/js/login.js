@@ -1,7 +1,7 @@
 
 const togglePassword = document.getElementById('togglePassword');
 const passwordInput = document.getElementById('password');
-
+const ErrorConnexion = document.getElementById('ErrorConnexion');
 togglePassword.addEventListener('click', function () {
   // Toggle the type attribute
   const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
@@ -55,7 +55,6 @@ togglePassword.addEventListener('click', function () {
         if (user) {
             // Stocker l'utilisateur connecté
             localStorage.setItem('currentUser', JSON.stringify(user));
-            alert('Connexion réussie !');
             window.location.href = '../pages/home.html'; // Redirection vers la page d'accueil
         } else {
             // Afficher le message d'erreur
@@ -66,10 +65,11 @@ togglePassword.addEventListener('click', function () {
             const emailExists = users.some(user => user.email === email);
             
             if (!emailExists) {
-                alert('Aucun compte trouvé avec cet email. Redirection vers la page de création de compte...');
+                ErrorConnexion.classList.remove('hidden')
+                
                 setTimeout(() => {
                     window.location.href = './create.html';
-                }, 2000);
+                }, 5000);
             } else {
                 alert('Mot de passe incorrect !');
             }

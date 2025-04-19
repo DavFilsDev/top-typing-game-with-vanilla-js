@@ -5,6 +5,7 @@ export default {
     "./src/pages/**/*.html",
     "./src/assets/js/**/*.js"  // Chemin modifié pour vos fichiers JS
   ],
+    darkMode: 'class',
   theme: {
     extend: {
       colors: {
