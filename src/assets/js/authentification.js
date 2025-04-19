@@ -1,36 +1,42 @@
+  // Gestion du formulaire de création de compte
+    const registerForm = document.querySelector('#registerSection form');
+    registerForm.addEventListener('submit', function(e) {
+       
 
-const togglePassword = document.getElementById('togglePassword');
-const passwordInput = document.getElementById('password');
+        const email = document.getElementById('email').value;
+        const password = passwordCreate.value;
+        const confirmPassword = password_confirm.value;
 
-togglePassword.addEventListener('click', function () {
-  // Toggle the type attribute
-  const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-  passwordInput.setAttribute('type', type);
+        // Validation des mots de passe
+        if (password !== confirmPassword) {
+            alert('Les mots de passe ne correspondent pas !');
+            return;
+        }
 
-  // Toggle the icon
-  this.classList.toggle('fa-eye');
-  this.classList.toggle('fa-eye-slash');
-});
+        // Vérifier si l'utilisateur existe déjà
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        const userExists = users.some(user => user.email === email);
 
- 
- const currentPage = window.location.pathname.split("/").pop();
+        if (userExists) {
+            alert('Un compte avec cet email existe déjà !');
+            return;
+        }
 
- 
-  const navItems = {
-    "about.html": "nav-about",
-    "create.html": "nav-register",
-    "login.html": "nav-login",
-    "index.html": "nav-index"
-  };
+        // Créer un nouvel utilisateur
+        const newUser = {
+            email: email,
+            password: password
+        };
 
+        users.push(newUser);
+        localStorage.setItem('users', JSON.stringify(users));
+        alert('Compte créé avec succès ! Vous pouvez maintenant vous connecter.');
+        window.location.href = 'login.html';
 
-  const activeNavId = navItems[currentPage];
-  if (activeNavId) {
-    const activeElement = document.getElementById(activeNavId);
-    activeElement.setAttribute("data-active", "true");
-  }
+         e.preventDefault();
+    });
 
-         const loginForm = document.querySelector('#loginSection form');
+        const loginForm = document.querySelector('#loginSection form');
     
     loginForm.addEventListener('submit', function(event) {
         // Empêcher le comportement par défaut du formulaire
@@ -56,7 +62,7 @@ togglePassword.addEventListener('click', function () {
             // Stocker l'utilisateur connecté
             localStorage.setItem('currentUser', JSON.stringify(user));
             alert('Connexion réussie !');
-            window.location.href = '../pages/home.html'; // Redirection vers la page d'accueil
+            window.location.href = '../index.html'; // Redirection vers la page d'accueil
         } else {
             // Afficher le message d'erreur
             const errorMessage = document.querySelector('#errorMessage');
@@ -68,7 +74,7 @@ togglePassword.addEventListener('click', function () {
             if (!emailExists) {
                 alert('Aucun compte trouvé avec cet email. Redirection vers la page de création de compte...');
                 setTimeout(() => {
-                    window.location.href = './create.html';
+                    window.location.href = 'create.html';
                 }, 2000);
             } else {
                 alert('Mot de passe incorrect !');

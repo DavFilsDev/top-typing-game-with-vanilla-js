@@ -24,16 +24,17 @@ togglePasswordConfirm.addEventListener('click', function () {
 
 
  
-  const currentPage = window.location.pathname.split("/").pop();
+const currentPage = window.location.pathname.split("/").pop();
 
-  // Dictionnaire des pages avec leur ID correspondant dans le header
+ 
   const navItems = {
     "about.html": "nav-about",
     "create.html": "nav-register",
-    "login.html": "nav-login"
+    "login.html": "nav-login",
+    "index.html": "nav-index"
   };
 
-  // Active dynamiquement le bon lien
+
   const activeNavId = navItems[currentPage];
   if (activeNavId) {
     const activeElement = document.getElementById(activeNavId);
@@ -66,3 +67,51 @@ togglePasswordConfirm.addEventListener('click', function () {
 
     container.appendChild(span);
   }
+
+  
+
+  // 
+  // 
+  // 
+  // 
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const registerForm = document.querySelector('#registerSection form');
+    if (!registerForm) return;
+
+    registerForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password_create').value;
+        const confirmPassword = document.getElementById('password_confirm').value;
+
+        // Validation
+        if (!email || !password || !confirmPassword) {
+            alert('Tous les champs sont obligatoires !');
+            return;
+        }
+
+        if (password !== confirmPassword) {
+            alert('Les mots de passe ne correspondent pas !');
+            return;
+        }
+
+        // Vérification existence utilisateur
+        let users = JSON.parse(localStorage.getItem('users')) || [];
+        
+        if (users.some(user => user.email === email)) {
+            alert('Un compte existe déjà avec cet email !');
+            return;
+        }
+
+        // Enregistrement
+        users.push({ email, password });
+        localStorage.setItem('users', JSON.stringify(users));
+        
+        console.log('Utilisateur enregistré :', { email, password }); // Debug
+        alert('Compte créé avec succès !');
+        window.location.href = 'login.html';
+    });
+});

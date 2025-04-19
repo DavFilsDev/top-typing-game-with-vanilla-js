@@ -5,15 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const aboutIcon = document.getElementById("aboutIcon");
   const aboutTechnical = document.getElementById("aboutTechnical");
   const headerHeight = document.querySelector('header').offsetHeight;
-  aboutIcon.addEventListener("click", () => {
-    const targetPosition = aboutTechnical.offsetTop - headerHeight - 40;
-    aboutTechnical.classList.remove("hidden");
 
-    window.scrollTo({
-      top: targetPosition,
-      behavior: 'smooth'
-    });
-  });
 
 const currentPage = window.location.pathname.split("/").pop();
 
@@ -21,7 +13,8 @@ const currentPage = window.location.pathname.split("/").pop();
   const navItems = {
     "about.html": "nav-about",
     "create.html": "nav-register",
-    "login.html": "nav-login"
+    "login.html": "nav-login",
+    "index.html": "nav-index"
   };
 
   // Active dynamiquement le bon lien
