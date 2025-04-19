@@ -76,76 +76,49 @@
             z-index: 10;
             cursor: pointer;
         }
+       /* Ajoutez ces styles */
+        #hunter-container {
+            position: absolute;
+            z-index: 10;
+            transition: left 0.1s linear, top 0.1s linear;
+        }
+
+        #text-display {
+            position: relative;
+        }
+
+        .char {
+            transition: opacity 0.2s ease-out;
+        }
     </style>
 </head>
 
 <body >
-    <header class="flex flex-row justify-between items-center bg-[#142829] h-[10vh] px-[40px] fixed top-0 left-0 right-0 z-50">
+    <header class="flex flex-row justify-between items-center bg-[#142829] h-[10vh] px-[40px] z-50">
         <img src="/public/img/logo.png" alt="logo" class="w-20 h-20" />
-        <nav class="text-[20px] text-primary_light w-[40%]" id="navbar">
-          <ul class="flex flex-row justify-between items-center">
-            <!-- Accueil -->
-            <li class="list-none group" id="nav-about">
-              <a href="../../index.html" class="relative pb-2 text-primary_light group-data-[active=true]:text-[#bc16a5]">
-                Accueil
-                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#bc16a5] transition-all duration-300 group-hover:w-full group-data-[active=true]:w-full"></span>
-              </a>
-            </li>
-            <!-- À propos -->
-            <li class="list-none group" id="nav-about">
-              <a href="about.html" class="relative pb-2 text-primary_light group-data-[active=true]:text-[#bc16a5]">
-                À propos
-                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#bc16a5] transition-all duration-300 group-hover:w-full group-data-[active=true]:w-full"></span>
-              </a>
-            </li>
-            
-            <!-- Créer un compte -->
-            <li class="list-none group" id="nav-register">
-              <a href="create.html" class="relative pb-2 text-primary_light group-data-[active=true]:text-[#bc16a5]">
-                Créer un compte
-                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#bc16a5] transition-all duration-300 group-hover:w-full group-data-[active=true]:w-full"></span>
-              </a>
-            </li>
-      
-            <!-- Se connecter -->
-            <li class="list-none group" id="nav-login">
-              <a href="login.html" class="border-2 border-primary_light py-1 px-4 rounded-[20px] text-primary_light hover:bg-[#bc16a5] hover:border-[#bc16a5] transition duration-400 group-data-[active=true]:bg-[#bc16a5] group-data-[active=true]:border-[#bc16a5] group-data-[active=true]:text-white">
-                Se connecter
-              </a>
-            </li>
-      
-            <!-- Mode sombre/clair -->
-            <li class="list-none" id="nav-mode">
-              <button type="button"
-                class="border-2 border-primary_light px-5 rounded-[20px] hover:text-black hover:bg-primary_light active:bg-[#bc16a5] transition duration-400 w-20 h-10">
-                <i class="fa-solid fa-moon"></i>
-              </button>
-            </li>
-          </ul>
-        </nav>
+        <div class="flex flex-row justify-between items-center h-full w-[10%]">
+            <a href="../pages/home.html"><i class="fa-solid fa-house text-3xl text-white"></i></a>
+            <div class="list-none" id="nav-mode">
+                <button type="button"
+                  class="border-2 border-primary_light px-5 rounded-[20px] hover:text-black hover:bg-primary_light active:bg-[#bc16a5] transition duration-400 w-20 h-10">
+                  <i class="fa-solid fa-moon"></i>
+                </button>
+            </div>
+        </div> 
       </header>
       
     <main class="flex flex-col items-center gap-0 flex-grow h-[90vh] w-[100vw] bg-primary_dark">
         <h1 class="text-center text-4xl text-primary_color font-bold mt-[50px] mb-[20px]">Top-typing-game</h1>
         <div class="flex flex-col items-center h-[80%] w-[80%]">
-
             <!-- Contrôles du test -->
             <div class="controls flex justify-between items-center mb-20 p-4 rounded-lg w-[100%]">
-                <div>
-                    <label for="mode" class="mr-2 font-medium text-white">Mode:</label>
-                    <select id="mode" class="p-2 border rounded">
-                        <option value="easy">Facile</option>
-                        <option value="medium">Moyen</option>
-                        <option value="hard">Difficile</option>
-                    </select>
+                <div class="flex items-center">
+                    <span class="mr-2 font-medium text-white" data-translate="mode">Mode :</span>
+                    <span class="px-3 py-1 bg-green-600 text-white rounded-lg transition-all duration-200 hover:bg-green-700 hover:scale-105" data-translate="easy">Facile</span>
+                    <input type="hidden" id="mode" value="easy">
                 </div>
 
-                <div>
-                    <!-- Animations pour l'utilisateur pour afficher lorsque le temps passe et je pense utiliser un couleurs de rocket animer  -->
-                    <!-- j'aimerais mettre une image en png pour pour faire voir à l'utilisateur sa vitesse, par exemple si je vais prendre une image de rocket , si l'utilisateur tape sans faire de faute, le rocket
-                    fait une illustration comme s'il vas très vite et si l'utilisateur écrit lentement ou fait une faute , le rocket fait une animation de ralentissement et en cas de pause, peut être le pilot sort du rocket et bois un café , du genre comme cela  -->
-                </div>
- 
+
                 <button id="restart-btn" class="px-4 py-2 border-2 border-primary_color text-white rounded hover:bg-primary_color hover:border-primary_dark hover:rounded-md">
                     Recommencer
                 </button>
@@ -233,7 +206,7 @@
 
         </div>
     </main>
-    <script src="../assets/js/defi.js" type="module"></script>
+    <script src="../assets/js/test.js" type="module"></script>
 </body>
 
-</html>
+</html> 

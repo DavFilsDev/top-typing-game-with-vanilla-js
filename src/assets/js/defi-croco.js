@@ -35,12 +35,29 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Configuration
-    const TEST_DURATION = 60; // 60 secondes
-    const words = {
-        easy: ["apple", "banana", "grape", "orange", "cherry"],
-        medium: ["keyboard", "monitor", "printer", "charger", "battery"],
-        hard: ["synchronize", "complicated", "development", "extravagant", "misconception"]
+    // Configuration des modes
+    const gameConfig = {
+        easy: {
+            timeLimit: 30, // 30 secondes
+            wordCount: 30, // 30 mots à taper
+            words: ["apple", "banana", "grape", "orange", "cherry", "dog", "cat", "sun", "moon", "tree"],
+            imageWin: "/public/img/crocodile-lose.jpeg",
+            imageLose: "/public/img/crocodile-win.jpeg"
+        },
+        medium: {
+            timeLimit: 35,
+            wordCount: 40,
+            words: ["keyboard", "monitor", "printer", "charger", "battery", "laptop", "screen", "mouse", "cable", "router"],
+            imageWin: "/public/img/crocodile-lose.jpeg",
+            imageLose: "/public/img/crocodile-win.jpeg"
+        },
+        hard: {
+            timeLimit: 25,
+            wordCount: 50,
+            words: ["synchronize", "complicated", "development", "extravagant", "misconception", "algorithm", "function", "variable", "parameter", "interface"],
+            imageWin: "/public/img/crocodile-lose.jpeg",
+            imageLose: "/public/img/crocodile-win.jpeg"
+        }
     };
 
     // Éléments DOM
@@ -58,26 +75,50 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Variables d'état
     let currentText = '';
+    let wordsToType = [];
+    let currentWordIndex = 0;
     let timer = null;
-    let timeLeft = TEST_DURATION;
+    let timeLeft = 0;
     let currentPosition = 0;
     let correctChars = 0;
     let totalTyped = 0;
     let testActive = false;
     let isPaused = false;
     let startTime = null;
-    let pauseStartTime = null;
-    let totalPausedTime = 0;
+    let hasError = false;
+    let currentLang = 'fr';
 
-    // Fonction pour générer le texte
-    const generateText = () => {
+    // Fonction pour générer les mots à taper
+    const generateWords = () => {
         const mode = modeSelect.value;
-        let generated = [];
-        for (let i = 0; i < 50; i++) {
-            const randomIndex = Math.floor(Math.random() * words[mode].length);
-            generated.push(words[mode][randomIndex]);
+        const config = gameConfig[mode];
+        
+        // Réinitialiser l'état
+        currentWordIndex = 0;
+        hasError = false;
+        correctChars = 0;
+        totalTyped = 0;
+        
+        // Sélectionner aléatoirement les mots
+        wordsToType = [];
+        for (let i = 0; i < config.wordCount; i++) {
+            const randomIndex = Math.floor(Math.random() * config.words.length);
+            wordsToType.push(config.words[randomIndex]);
         }
-        currentText = generated.join(' ');
+        
+        displayCurrentWord();
+    };
+
+    // Afficher le mot actuel
+    const displayCurrentWord = () => {
+        if (currentWordIndex >= wordsToType.length) {
+            endTest(!hasError); // Tous les mots tapés
+            return;
+        }
+        
+        currentText = wordsToType[currentWordIndex];
+        currentPosition = 0;
+        textInput.value = '';
         renderText();
     };
 
@@ -89,10 +130,8 @@ document.addEventListener('DOMContentLoaded', function() {
             if (i < currentPosition) charClass = 'typed';
             if (i === currentPosition) charClass = 'current';
             
-            if (i < currentPosition && textInput.value[i] === currentText[i]) {
-                charClass += ' correct';
-            } else if (i < currentPosition) {
-                charClass += ' incorrect';
+            if (i < currentPosition) {
+                charClass += textInput.value[i] === currentText[i] ? ' correct' : ' incorrect';
             }
 
             html += `<span class="char ${charClass}">${currentText[i]}</span>`;
@@ -124,82 +163,71 @@ document.addEventListener('DOMContentLoaded', function() {
     // Fonction pour mettre à jour le timer
     const updateTimer = () => {
         if (!isPaused && startTime) {
+            const mode = modeSelect.value;
             const now = Date.now();
-            const elapsedSeconds = (now - startTime - totalPausedTime) / 1000;
-            timeLeft = Math.max(0, TEST_DURATION - Math.floor(elapsedSeconds));
+            const elapsedSeconds = (now - startTime) / 1000;
+            timeLeft = Math.max(0, gameConfig[mode].timeLimit - Math.floor(elapsedSeconds));
             document.getElementById('time').textContent = timeLeft;
             
             if (timeLeft <= 0) {
-                endTest();
+                endTest(false); // Temps écoulé
             }
         }
     };
 
-    // Fonction pour mettre en pause
-    const pauseTest = () => {
-        if (testActive && !isPaused) {
-            isPaused = true;
-            pauseStartTime = Date.now();
-            clearInterval(timer);
-            timer = null;
-            showPauseOverlay();
-        }
-    };
-
-    // Fonction pour reprendre
-    const resumeTest = () => {
-        if (testActive && isPaused) {
-            isPaused = false;
-            totalPausedTime += Date.now() - pauseStartTime;
-            timer = setInterval(updateTimer, 100);
-            hidePauseOverlay();
-        }
-    };
-
-    // Fonction pour basculer pause/reprise
-    const togglePause = () => {
-        if (isPaused) {
-            resumeTest();
-        } else {
-            pauseTest();
-        }
-    };
-
-    // Fonctions pour l'overlay de pause
-    const showPauseOverlay = () => {
-        const indicator = document.createElement('div');
-        indicator.id = 'pause-indicator';
-        indicator.className = 'absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white text-2xl z-10 cursor-pointer';
-        indicator.textContent = currentLang === 'fr' ? 'PAUSE - Cliquez pour continuer' : 'PAUSED - Click to continue';
-        indicator.addEventListener('click', resumeTest);
-        testContainer.appendChild(indicator);
-    };
-
-    const hidePauseOverlay = () => {
-        const indicator = document.getElementById('pause-indicator');
-        if (indicator) {
-            indicator.remove();
-        }
-    };
-
     // Fonction pour terminer le test
-    const endTest = () => {
+    const endTest = (success) => {
         clearInterval(timer);
-        timer = null;
         testActive = false;
         
-        const elapsedMinutes = (TEST_DURATION - timeLeft) / 60;
-        const wordsTyped = correctChars / 5;
+        const mode = modeSelect.value;
+        const config = gameConfig[mode];
+        const elapsedMinutes = (config.timeLimit - timeLeft) / 60;
+        const wordsTyped = currentWordIndex;
         const wpm = Math.round(wordsTyped / elapsedMinutes);
         const accuracy = totalTyped > 0 ? Math.round((correctChars / totalTyped) * 100) : 0;
         
-        // Modifier l'affichage
-        document.getElementById('time-unit').style.display = 'none';
-        document.getElementById('time').textContent = currentLang === 'fr' ? 'terminé' : 'finished';
-        document.querySelector('.timer').classList.add('text-red-500');
-        
+        // Afficher les résultats
         wpmDisplay.textContent = wpm;
         accuracyDisplay.textContent = accuracy;
+        
+        // Déterminer le résultat final
+        let resultTitle, resultMessage, resultImage;
+        
+        if (!success) {
+            if (timeLeft <= 0) {
+                resultTitle = currentLang === 'fr' ? 'Temps écoulé !' : 'Time\'s up!';
+                resultMessage = currentLang === 'fr' ? 'Vous n\'avez pas terminé à temps.' : 'You didn\'t finish in time.';
+            } else {
+                resultTitle = currentLang === 'fr' ? 'Erreur commise !' : 'Error made!';
+                resultMessage = currentLang === 'fr' ? 'Vous avez fait une erreur durant le test.' : 'You made an error during the test.';
+            }
+            resultImage = config.imageLose;
+        } else {
+            resultTitle = currentLang === 'fr' ? 'Victoire !' : 'Victory!';
+            resultMessage = currentLang === 'fr' ? 'Vous avez réussi le défi !' : 'You completed the challenge!';
+            resultImage = config.imageWin;
+        }
+        
+        // Afficher le résultat
+        resultsContainer.innerHTML = `
+            <h2 class="text-3xl font-bold mb-6">${resultTitle}</h2>
+            <div class="stats grid grid-cols-2 gap-4 text-xl mb-6">
+                <div>WPM: <span id="wpm" class="font-bold">${wpm}</span></div>
+                <div>${currentLang === 'fr' ? 'Précision' : 'Accuracy'}: <span id="accuracy" class="font-bold">${accuracy}%</span></div>
+            </div>
+            <div class="mb-4">
+                <img src="${resultImage}" alt="Result" class="h-32 mx-auto">
+                <p class="mt-2 text-lg">${resultMessage}</p>
+            </div>
+            <button id="retry-btn" class="mt-4 px-6 py-2 ${success ? 'bg-green-500' : 'bg-red-500'} text-white rounded-lg hover:opacity-90">
+                ${currentLang === 'fr' ? 'Réessayer' : 'Try again'}
+            </button>
+        `;
+        
+        // Réattacher l'événement au bouton
+        document.getElementById('retry-btn').addEventListener('click', initTest);
+        
         testContainer.classList.add('hidden');
         resultsContainer.classList.remove('hidden');
     };
@@ -207,75 +235,107 @@ document.addEventListener('DOMContentLoaded', function() {
     // Fonction pour initialiser/réinitialiser le test
     const initTest = () => {
         clearInterval(timer);
-        timer = null;
-        timeLeft = TEST_DURATION;
         
-        // Réinitialiser l'affichage du timer
-        document.getElementById('time').textContent = timeLeft;
-        document.getElementById('time-unit').style.display = 'inline';
-        document.querySelector('.timer').classList.remove('text-red-500');
-        
+        const mode = modeSelect.value;
+        timeLeft = gameConfig[mode].timeLimit;
         currentPosition = 0;
         correctChars = 0;
         totalTyped = 0;
         testActive = false;
         isPaused = false;
         startTime = null;
-        pauseStartTime = null;
-        totalPausedTime = 0;
+        hasError = false;
         
-        generateText();
+        // Réinitialiser l'affichage
+        document.getElementById('time').textContent = timeLeft;
+        document.getElementById('time-unit').style.display = 'inline';
+        document.querySelector('.timer').classList.remove('text-red-500');
+        
+        generateWords();
         textInput.value = '';
         resultsContainer.classList.add('hidden');
         testContainer.classList.remove('hidden');
         textInput.focus();
-        hidePauseOverlay();
     };
 
     // Écouteur d'événements pour la saisie
     textInput.addEventListener('input', (e) => {
-        if (isPaused) {
-            resumeTest();
-        }
+        if (isPaused) return;
         
-        if (!testActive && e.target.value.length > 0) {
+        if (!testActive) {
             startTimer();
         }
         
         const input = e.target.value;
         totalTyped++;
         
+        // Vérifier si le caractère est correct
         if (input[input.length - 1] === currentText[currentPosition]) {
             correctChars++;
+        } else {
+            hasError = true; // Marquer qu'une erreur a été commise
         }
         
         currentPosition = input.length;
         renderText();
         
+        // Vérifier si le mot est complet
         if (currentPosition >= currentText.length) {
-            generateText();
-            currentPosition = input.length;
+            currentWordIndex++;
+            setTimeout(() => {
+                displayCurrentWord();
+            }, 50);
         }
     });
 
-    // Écouteurs pour les boutons et menus
-    modeSelect.addEventListener('change', initTest);
-    restartBtn.addEventListener('click', initTest);
-    retryBtn.addEventListener('click', initTest);
-
-    // Modification clé ici - suppression de la pause automatique pour les menus
-    document.getElementById('font-selector').addEventListener('click', function(e) {
-        e.stopPropagation();
-        document.getElementById('font-menu').classList.toggle('hidden');
+    // Gestion de la pause
+    document.addEventListener('keydown', function(e) {
+        if (e.ctrlKey && e.key === 'x' && testActive) {
+            togglePause();
+            e.preventDefault();
+        }
     });
 
-    document.querySelectorAll('#font-menu button').forEach(button => {
-        button.addEventListener('click', function() {
-            document.getElementById('text-display').style.fontFamily = this.getAttribute('data-font');
-            document.getElementById('font-menu').classList.add('hidden');
-            initTest(); // Redémarre le test
-        });
-    });
+    function togglePause() {
+        if (isPaused) {
+            resumeTest();
+        } else {
+            pauseTest();
+        }
+    }
+
+    function pauseTest() {
+        if (testActive && !isPaused) {
+            isPaused = true;
+            clearInterval(timer);
+            showPauseOverlay();
+        }
+    }
+
+    function resumeTest() {
+        if (testActive && isPaused) {
+            isPaused = false;
+            startTime = Date.now() - (gameConfig[modeSelect.value].timeLimit - timeLeft) * 1000;
+            timer = setInterval(updateTimer, 100);
+            hidePauseOverlay();
+        }
+    }
+
+    function showPauseOverlay() {
+        const indicator = document.createElement('div');
+        indicator.id = 'pause-indicator';
+        indicator.className = 'absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white text-2xl z-10 cursor-pointer';
+        indicator.textContent = currentLang === 'fr' ? 'PAUSE - Cliquez pour continuer' : 'PAUSED - Click to continue';
+        indicator.addEventListener('click', resumeTest);
+        testContainer.appendChild(indicator);
+    }
+
+    function hidePauseOverlay() {
+        const indicator = document.getElementById('pause-indicator');
+        if (indicator) {
+            indicator.remove();
+        }
+    }
 
     // Gestion des langues
     const translations = {
@@ -311,25 +371,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    let currentLang = 'fr';
-
-    // Modification clé ici - suppression de la pause automatique pour les menus
-    document.getElementById('language-selector').addEventListener('click', function(e) {
-        e.stopPropagation();
-        document.getElementById('language-menu').classList.toggle('hidden');
-    });
-
-    document.querySelectorAll('#language-menu button').forEach(button => {
-        button.addEventListener('click', function() {
-            currentLang = this.getAttribute('data-lang');
-            updateLanguage();
-            document.getElementById('language-menu').classList.add('hidden');
-            document.querySelector('#language-selector .fi').className = 
-                currentLang === 'fr' ? 'fi fi-fr mr-2' : 'fi fi-us mr-2';
-            initTest(); // Redémarre le test
-        });
-    });
-
     function updateLanguage() {
         const t = translations[currentLang];
         document.querySelector('.challenge-text').textContent = t.challenge;
@@ -347,6 +388,22 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('retry-btn').textContent = t.retry;
     }
 
+    // Sélecteur de langue
+    document.getElementById('language-selector').addEventListener('click', function(e) {
+        e.stopPropagation();
+        document.getElementById('language-menu').classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('#language-menu button').forEach(button => {
+        button.addEventListener('click', function() {
+            currentLang = this.getAttribute('data-lang');
+            updateLanguage();
+            document.getElementById('language-menu').classList.add('hidden');
+            document.querySelector('#language-selector .fi').className = 
+                currentLang === 'fr' ? 'fi fi-fr mr-2' : 'fi fi-us mr-2';
+        });
+    });
+
     // Navigation
     document.getElementById('challenge-btn').addEventListener('click', function() {
         window.location.href = "/challenge";
@@ -356,23 +413,8 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = "/contact";
     });
 
-    // Pause avec Ctrl+X (conservé inchangé)
-    document.addEventListener('keydown', function(e) {
-        if (e.ctrlKey && e.key === 'x' && testActive) {
-            togglePause();
-            e.preventDefault();
-        }
-    });
-
-    // Fermeture des menus
-    document.addEventListener('click', function(e) {
-        if (!e.target.closest('#font-selector') && !e.target.closest('#font-menu')) {
-            document.getElementById('font-menu').classList.add('hidden');
-        }
-        if (!e.target.closest('#language-selector') && !e.target.closest('#language-menu')) {
-            document.getElementById('language-menu').classList.add('hidden');
-        }
-    });
+    // Redémarrer le test
+    restartBtn.addEventListener('click', initTest);
 
     // Initialisation
     initTest();
