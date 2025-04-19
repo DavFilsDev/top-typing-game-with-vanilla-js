@@ -2101,10 +2101,6 @@ video {
   outline-offset: 2px;
 }
 
-.outline {
-  outline-style: solid;
-}
-
 .filter {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
@@ -2542,14 +2538,6 @@ video {
 
 .group:hover .group-hover\:opacity-50 {
   opacity: 0.5;
-}
-
-.group:focus .group-focus\:w-full {
-  width: 100%;
-}
-
-.group:active .group-active\:w-full {
-  width: 100%;
 }
 
 .group[data-active="true"] .group-data-\[active\=true\]\:w-full {
