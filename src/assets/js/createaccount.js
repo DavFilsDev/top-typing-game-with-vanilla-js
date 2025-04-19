@@ -2,6 +2,8 @@ const togglePassword = document.getElementById('togglePasswordAcount');
 const passwordInput = document.getElementById('password_create');
 const togglePasswordConfirm = document.getElementById('togglePasswordConfirm');
 const password_confirm = document.getElementById('password_confirm');
+const confirmPassword= document.getElementById('confirmPassword');
+const mailConfirm=document.getElementById('mailConfirm')
 togglePassword.addEventListener('click', function () {
   // Toggle the type attribute
   const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
@@ -41,7 +43,7 @@ const currentPage = window.location.pathname.split("/").pop();
     activeElement.setAttribute("data-active", "true");
   }
 
-   const letters = "azertyuiopqsdfghjklmwxcvbn1234567890";
+   const letters = "azertyuiopqsdfghjklmwxcvbn;:";
   const container = document.getElementById("floating-letters");
 
   for (let i = 0; i < 80; i++) {
@@ -86,23 +88,28 @@ const currentPage = window.location.pathname.split("/").pop();
         const email = document.getElementById('email').value.trim();
         const password = document.getElementById('password_create').value;
         const confirmPassword = document.getElementById('password_confirm').value;
+        const champConfirm=document.getElementById('champConfirm')
 
         // Validation
+        
         if (!email || !password || !confirmPassword) {
             alert('Tous les champs sont obligatoires !');
             return;
         }
 
         if (password !== confirmPassword) {
-            alert('Les mots de passe ne correspondent pas !');
-            return;
+           champConfirm.classList.remove('hidden');
+           
+           return;
+          
         }
 
         // Vérification existence utilisateur
         let users = JSON.parse(localStorage.getItem('users')) || [];
         
         if (users.some(user => user.email === email)) {
-            alert('Un compte existe déjà avec cet email !');
+        
+           mailConfirm.classList.remove('hidden');
             return;
         }
 
@@ -111,7 +118,12 @@ const currentPage = window.location.pathname.split("/").pop();
         localStorage.setItem('users', JSON.stringify(users));
         
         console.log('Utilisateur enregistré :', { email, password }); // Debug
+
+ 
+  
+
         alert('Compte créé avec succès !');
         window.location.href = 'login.html';
     });
+   
 });

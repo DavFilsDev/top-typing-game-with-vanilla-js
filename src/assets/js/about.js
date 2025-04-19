@@ -25,6 +25,18 @@ const currentPage = window.location.pathname.split("/").pop();
   }
 
 
+   
+    aboutIcon.addEventListener('click', function() {
+      // Animation de défilement fluide
+      aboutTechnical.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+      
+      // Animation visuelle supplémentaire (optionnelle)
+     
+    });
+  
 
  
 

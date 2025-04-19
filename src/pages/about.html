@@ -10,22 +10,23 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+     <script src="../assets/js/theme.js" defer></script>
   </head>
-  <body class="bg-[#142829] transition duration-300">
-   <header class="flex flex-row justify-between items-center bg-[#142829] h-[10vh] px-[40px] fixed top-0 left-0 right-0 z-50">
+  <body class="bg-[#142829] dark:bg-primary_light transition duration-300 ease-in-out">
+<header class="flex flex-row justify-between items-center bg-primary_dark dark:bg-primary_light h-[10vh] px-[40px] fixed top-0 left-0 right-0 z-50">
   <img src="/public/img/logo.png" alt="logo" class="w-20 h-20" />
   <nav class="text-[20px] text-primary_light w-[40%]" id="navbar">
     <ul class="flex flex-row justify-between items-center">
       <!-- Accueil -->
       <li class="list-none group" id="nav-index">
-        <a href="../../index.html" class="relative pb-2 text-primary_light group-data-[active=true]:text-[#bc16a5]">
+        <a href="../../index.html" class="relative pb-2 text-primary_light group-data-[active=true]:text-[#bc16a5] dark:text-primary_dark">
           Accueil
           <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#bc16a5] transition-all duration-300 group-hover:w-full group-data-[active=true]:w-full"></span>
         </a>
       </li>
       <!-- À propos -->
       <li class="list-none group" id="nav-about">
-        <a href="about.html" class="relative pb-2 text-primary_light group-data-[active=true]:text-[#bc16a5]">
+        <a href="about.html" class="relative pb-2 text-primary_light group-data-[active=true]:text-[#bc16a5]  dark:text-primary_dark">
           À propos
           <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#bc16a5] transition-all duration-300 group-hover:w-full group-data-[active=true]:w-full"></span>
         </a>
@@ -33,7 +34,7 @@
       
       <!-- Créer un compte -->
       <li class="list-none group" id="nav-register">
-        <a href="create.html" class="relative pb-2 text-primary_light group-data-[active=true]:text-[#bc16a5]">
+        <a href="create.html" class="relative pb-2 text-primary_light group-data-[active=true]:text-[#bc16a5] dark:text-primary_dark">
           Créer un compte
           <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#bc16a5] transition-all duration-300 group-hover:w-full group-data-[active=true]:w-full"></span>
         </a>
@@ -41,46 +42,46 @@
 
       <!-- Se connecter -->
       <li class="list-none group" id="nav-login">
-        <a href="login.html" class="border-2 border-primary_light py-1 px-4 rounded-[20px] text-primary_light hover:bg-[#bc16a5] hover:border-[#bc16a5] transition duration-400 group-data-[active=true]:bg-[#bc16a5] group-data-[active=true]:border-[#bc16a5] group-data-[active=true]:text-white">
+        <a href="login.html" class="  dark:text-primary_dark border-2 border-primary_light py-1 px-4 rounded-[20px] text-primary_light hover:bg-[#bc16a5] hover:border-[#bc16a5] transition duration-400 group-data-[active=true]:bg-[#bc16a5] group-data-[active=true]:border-[#bc16a5] group-data-[active=true]:text-white">
           Se connecter
         </a>
       </li>
 
       <!-- Mode sombre/clair -->
-      <li class="list-none" id="nav-mode">
+      <li class="list-none" id="toggle">
         <button type="button"
-          class="border-2 border-primary_light px-5 rounded-[20px] hover:text-black hover:bg-primary_light active:bg-[#bc16a5] transition duration-400 w-20 h-10">
-          <i class="fa-solid fa-moon"></i>
+          class="border-2 border-primary_light px-5 rounded-[20px] hover:text-black hover:bg-primary_light active:bg-[#bc16a5] transition duration-400 w-20 h-10 dark:border-primary_dark">
+          <i class="fa-solid fa-moon dark:text-primary_dark" id="iconToggle"></i>
         </button>
       </li>
     </ul>
   </nav>
 </header>
-      <main class="h-[90vh] bg-[#142829] flex justify-center items-center">
+      <main class=" h-[95vh]  mt-10 bg-[#142829] dark:bg-primary_light flex justify-center items-center">
 
-        <div class="w-full h-[87%] overflow-y-auto scroll-smooth">
+        <div class="w-full h-[100%] overflow-y-auto scroll-smooth">
           <!-- Section Principale À Propos -->
-          <div class="grid-row-2 w-[70%] min-h-[64vh] mx-auto border border-[#bc16a5]/30 py-[1rem] mt-10 bg-white/5 backdrop-blur-md rounded-xl
+          <div class="grid-row-2 w-[70%] min-h-[65vh] mx-auto border border-[#bc16a5]/30 py-[1rem] mt-[10vh] bg-white/5 backdrop-blur-md rounded-xl
                       animate-[fadeIn_1s_ease-out]">
               <div class="pb-[25px] animate-[slideDown_1s_ease-out]">
                   <h1 class="text-center text-[#bc16a5] text-[2.5rem] font-bold">
                       Top-typing TEST
                   </h1>
-                  <p class="text-center text-white/80 text-[1.5rem]">
+                  <p class="text-center text-white/80 text-[1.5rem] dark:text-primary_dark">
                       "Améliorer votre vitesse et précision de frappe grâce à des défis ludiques"
                   </p>
               </div>
-              <div class="flex justify-evenly text-white/80 h-[50%] pt-[25px] animate-[slideUp_1s_ease-out]">
+              <div class="flex justify-evenly h-[50%] pt-[25px] animate-[slideUp_1s_ease-out] ">
                   <img src="/public/img/keyboardYoupi.png" alt="keyboard" 
                        class="w-1/3 object-contain animate-[float_4s_ease-in-out_infinite]">
                   <div class="w-[60%] flex flex-col gap-y-[2rem] text-[18px] text-justify">
-                      <p class="hover:text-white transition-colors duration-300 hover:scale-[1.02]">
+                      <p class="text-white hover:text-white transition-colors duration-300 hover:scale-[1.02]  dark:text-primary_dark">
                           Top-typing est bien plus qu'un simple typing test en ligne mais offre une expérience immersive pour maîtriser le clavier comme un pro.
                       </p>
-                      <p class="hover:text-white transition-colors duration-300 hover:scale-[1.02]">
+                      <p class="text-white hover:text-white transition-colors duration-300 hover:scale-[1.02]  dark:hover:text-primary_dark dark:text-primary_dark">
                           Que tu sois débutant ou pro du clavier, tu trouveras ici de quoi perfectionner ta vitesse de frappe (jusqu'à + 100 WPM)
                       </p>
-                      <p class="hover:text-white transition-colors duration-300 hover:scale-[1.02]">
+                      <p class=" text-white hover:text-white transition-colors duration-300 hover:scale-[1.02]  dark:hover:text-primary_dark dark:text-primary_dark">
                           Notre application aide les étudiants et professionnels à maîtriser le clavier grâce à des exercices personnalisés et des statistiques détaillées.
                       </p>
   
@@ -97,15 +98,15 @@
           </div>
   
           <!-- Flèche animée -->
-          <div class="relative h-[10vh] w-32 mx-auto top-10 animate-[bounce_2s_infinite] cursor-pointer" id="aboutIcon">
+          <div class="relative h-[10vh]  w-32 mx-auto top-10 animate-[bounce_2s_infinite] cursor-pointer mb-[10vh]" id="aboutIcon">
               <i class="fas fa-chevron-down text-[5rem] absolute top-0 text-[#bc16a5]"></i>
               <i class="fas fa-chevron-down text-[5rem] absolute top-[1.5rem] text-[#bc16a5] opacity-60"></i>
           </div>
   
           <!-- Fonctionnalités clés -->
-          <div id="aboutTechnical" class="min-h-[80vh] w-[80%] mx-auto bg-transparent py-10">
+          <div id="aboutTechnical" class="min-h-[80vh] w-[80%] mx-auto bg-transparent  py-[10rem]">
               <div class="flex flex-col justify-between items-center mb-14 animate-[fadeIn_1s_ease-out]">
-                  <h1 class="text-4xl text-white">Fonctionalités clés</h1>
+                  <h1 class="text-4xl text-white dark:text-primary_dark">Fonctionalités clés</h1>
                   <div class="w-24 h-1 bg-[#bc16a5] ml-4"></div>
               </div>
   
@@ -118,8 +119,8 @@
                                       bg-cover bg-center opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
                           <div class="absolute inset-0 flex items-center justify-center">
                               <div class="text-center p-6 backdrop-blur-sm rounded-xl">
-                                  <h3 class="text-2xl font-bold text-white mb-2">Mode défi</h3>
-                                  <p class="text-white/80">Textes chronométrés avec niveaux de difficulté</p>
+                                  <h3 class="text-2xl font-bold text-white mb-2 dark:text-primary_dark">Mode défi</h3>
+                                  <p class="text-white/80 dark:text-primary_dark">Textes chronométrés avec niveaux de difficulté</p>
                               </div>
                           </div>
                       </div>
@@ -133,8 +134,8 @@
                                       bg-cover bg-center opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
                           <div class="absolute inset-0 flex items-center justify-center">
                               <div class="text-center p-6 backdrop-blur-sm rounded-xl">
-                                  <h3 class="text-2xl font-bold text-white mb-2">Tableaux de bord</h3>
-                                  <p class="text-white/80">Suivi des progrès (WPM, précision, historique)</p>
+                                  <h3 class="text-2xl font-bold text-white mb-2 dark:text-primary_dark">Tableaux de bord</h3>
+                                  <p class="text-white/80 dark:text-primary_dark">Suivi des progrès (WPM, précision, historique)</p>
                               </div>
                           </div>
                       </div>
@@ -148,8 +149,8 @@
                                       bg-cover bg-center opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
                           <div class="absolute inset-0 flex items-center justify-center">
                               <div class="text-center p-6 backdrop-blur-sm rounded-xl">
-                                  <h3 class="text-2xl font-bold text-white mb-2">Classements</h3>
-                                  <p class="text-white/80">Compétition avec d'autres utilisateurs</p>
+                                  <h3 class="text-2xl font-bold text-white mb-2 dark:text-primary_dark">Classements</h3>
+                                  <p class="text-white/80 dark:text-primary_dark">Compétition avec d'autres utilisateurs</p>
                               </div>
                           </div>
                       </div>
@@ -159,7 +160,7 @@
               <!-- Stack technique -->
               <div class="mt-20">
                   <div class="flex flex-col justify-center items-center mb-12 animate-[fadeIn_1s_ease-out]">
-                      <h1 class="text-4xl text-white">Stack technique</h1>
+                      <h1 class="text-4xl text-white dark:text-primary_dark">Stack technique</h1>
                       <div class="w-24 h-1 bg-[#bc16a5] ml-4"></div>
                   </div>
           
@@ -170,7 +171,7 @@
                                       border border-[#bc16a5]/30 hover:border-[#bc16a5]/80 transition-all duration-500">
                               <i class="fab fa-html5 text-[6rem] text-[#E34F26]"></i>
                           </div>
-                          <p class="pt-5 text-white font-semibold text-[30px]">HTML</p>
+                          <p class="pt-5 text-white font-semibold text-[30px] dark:text-primary_dark">HTML</p>
                       </div>
                   
                       <!-- Tailwind CSS -->
@@ -179,7 +180,7 @@
                                       border border-[#bc16a5]/30 hover:border-[#bc16a5]/80 transition-all duration-500">
                               <i class="fab fa-css3-alt text-[6rem] text-[#38B2AC]"></i>
                           </div>
-                          <p class="pt-5 text-white font-semibold text-[30px]">TAILWINDCSS</p>
+                          <p class="pt-5 text-white font-semibold text-[30px] dark:text-primary_dark">TAILWINDCSS</p>
                       </div>
                   
                       <!-- JavaScript -->
@@ -190,7 +191,7 @@
                                       alt="JavaScript Logo"
                                       class="h-[70%] object-contain">
                           </div>
-                          <p class="pt-5 text-white font-semibold text-[30px]">JAVASCRIPT</p>
+                          <p class="pt-5 text-white font-semibold text-[30px] dark:text-primary_dark">JAVASCRIPT</p>
                       </div>
                   </div>
               </div>
@@ -198,7 +199,7 @@
               <!-- Équipe -->
               <div class="mt-20">
                   <div class="flex flex-col justify-center items-center mb-12 animate-[fadeIn_1s_ease-out]">
-                      <h1 class="text-4xl text-white">Équipe</h1>
+                      <h1 class="text-4xl text-white dark:text-primary_dark">Équipe</h1>
                       <div class="w-16 h-1 bg-[#bc16a5] ml-4"></div>
                   </div>
   
@@ -213,15 +214,15 @@
                                           hover:scale-110 transition-transform duration-500">
                           </div>
                           <h3 class="text-2xl font-bold text-[#bc16a5] mb-2">Asminie RAZAFIARIVELO</h3>
-                          <h4 class="text-xl text-white/70 mb-3">Développeuse Full Stack</h4>
-                          <p class="text-center text-white/80">
+                          <h4 class="text-xl text-white/70 mb-3 dark:text-primary_dark">Développeuse Full Stack</h4>
+                          <p class="text-center text-white/80 dark:text-primary_dark">
                               Architecte des interfaces utilisateur et des APIs, elle maîtrise à la perfection 
                               React, Node.js et les architectures microservices. Passionnée par l'expérience 
                               utilisateur et les performances frontend.
                           </p>
                           <div class="mt-4 flex space-x-4">
-                              <i class="fab fa-github text-white/60 hover:text-[#bc16a5] transition-colors duration-300"></i>
-                              <i class="fab fa-linkedin text-white/60 hover:text-[#bc16a5] transition-colors duration-300"></i>
+                              <i class="fab fa-github text-white/60 dark:text-primary_dark/60 hover:text-[#bc16a5] transition-colors duration-300"></i>
+                              <i class="fab fa-linkedin text-white/60 dark:text-primary_dark/60 hover:text-[#bc16a5] transition-colors duration-300"></i>
                           </div>
                       </div>
 
@@ -235,15 +236,15 @@
                                           hover:scale-110 transition-transform duration-500">
                           </div>
                           <h3 class="text-2xl font-bold text-[#16bcbc] mb-2">Fanampinirina Miharisoa David Fils RATIANDRAIBE</h3>
-                          <h4 class="text-xl text-white/70 mb-3">Data Scientist</h4>
-                          <p class="text-center text-white/80">
+                          <h4 class="text-xl text-white/70 mb-3 dark:text-primary_dark">Data Scientist</h4>
+                          <p class="text-center text-white/80 dark:text-primary_dark">
                               Expert en machine learning et analyse de données, il transforme les statistiques 
                               de frappe en insights actionnables. Spécialiste Python, TensorFlow et des algorithmes 
                               de prédiction de performance.
                           </p>
                           <div class="mt-4 flex space-x-4">
-                              <i class="fab fa-github text-white/60 hover:text-[#16bcbc] transition-colors duration-300"></i>
-                              <i class="fab fa-linkedin text-white/60 hover:text-[#16bcbc] transition-colors duration-300"></i>
+                              <i class="fab fa-github text-white/60 hover:text-[#16bcbc] transition-colors duration-300 dark:text-primary_dark/70"></i>
+                              <i class="fab fa-linkedin text-white/60 hover:text-[#16bcbc] transition-colors duration-300 dark:text-primary_dark/70"></i>
                           </div>
                       </div>
                   </div>
@@ -252,32 +253,32 @@
               <!-- Contact -->
               <div class="mt-20 mb-20">
                   <div class="flex flex-col items-center animate-[fadeIn_1s_ease-out]">
-                      <h1 class="text-4xl text-white mb-4">Contactez-nous</h1>
+                      <h1 class="text-4xl text-white mb-4 dark:text-primary_dark">Contactez-nous</h1>
                       <div class="w-32 h-1 bg-[#bc16a5] mb-6"></div>
-                      <p class="text-white/80 text-xl mb-10">
+                      <p class="text-white/80 text-xl mb-10 dark:text-primary_dark">
                           Veuillez remplir ce formulaire pour nous contacter
                       </p>
                   </div>
   
                   <div class="max-w-2xl mx-auto p-6 bg-white/5 backdrop-blur-md rounded-xl border border-[#bc16a5]/30
-                              animate-[slideUp_1s_ease-out]">
+                              animate-[slideUp_1s_ease-out] ">
                       <form class="space-y-6">
                           <!-- Email -->
                           <div>
-                              <label for="email" class="block text-lg text-white/80 mb-2">Email</label>
+                              <label for="email" class="block text-lg text-white/80 mb-2 dark:text-primary_dark">Email</label>
                               <input type="email" id="email" name="email" required
-                                  class="block w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg
-                                         text-white focus:outline-none focus:border-[#bc16a5] transition duration-300
+                                  class="block w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg dark:bg-white 
+                                         text-white focus:outline-none focus:border-[#bc16a5] transition duration-300 dark:text-primary_dark
                                          placeholder-white/50">
                           </div>
   
                           <!-- Message -->
                           <div>
-                              <label for="message" class="block text-lg text-white/80 mb-2">Message</label>
+                              <label for="message" class="block text-lg text-white/80 mb-2 dark:text-primary_dark">Message</label>
                               <textarea id="message" name="message" rows="5" required
                                   class="block w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg
                                          text-white focus:outline-none focus:border-[#bc16a5] transition duration-300
-                                         placeholder-white/50"></textarea>
+                                         placeholder-white/50 dark:text-primary_dark dark:bg-white"></textarea>
                           </div>
   
                           <!-- Bouton -->

@@ -10,57 +10,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-
-
-
-  </head>
-  <body class="bg-[#142829] transition duration-300">
-<header class="flex flex-row justify-between items-center bg-[#142829] h-[10vh] px-[40px] fixed top-0 left-0 right-0 z-50">
-  <img src="/public/img/logo.png" alt="logo" class="w-20 h-20" />
-  <nav class="text-[20px] text-primary_light w-[40%]" id="navbar">
-    <ul class="flex flex-row justify-between items-center">
-      <!-- Accueil -->
-      <li class="list-none group" id="nav-about">
-        <a href="../../index.html" class="relative pb-2 text-primary_light group-data-[active=true]:text-[#bc16a5]">
-          Accueil
-          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#bc16a5] transition-all duration-300 group-hover:w-full group-data-[active=true]:w-full"></span>
-        </a>
-      </li>
-      <!-- À propos -->
-      <li class="list-none group" id="nav-about">
-        <a href="about.html" class="relative pb-2 text-primary_light group-data-[active=true]:text-[#bc16a5]">
-          À propos
-          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#bc16a5] transition-all duration-300 group-hover:w-full group-data-[active=true]:w-full"></span>
-        </a>
-      </li>
-      
-      <!-- Créer un compte -->
-      <li class="list-none group" id="nav-register">
-        <a href="create.html" class="relative pb-2 text-primary_light group-data-[active=true]:text-[#bc16a5]">
-          Créer un compte
-          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#bc16a5] transition-all duration-300 group-hover:w-full group-data-[active=true]:w-full"></span>
-        </a>
-      </li>
-
-      <!-- Se connecter -->
-      <li class="list-none group" id="nav-login">
-        <a href="login.html" class="border-2 border-primary_light py-1 px-4 rounded-[20px] text-primary_light hover:bg-[#bc16a5] hover:border-[#bc16a5] transition duration-400 group-data-[active=true]:bg-[#bc16a5] group-data-[active=true]:border-[#bc16a5] group-data-[active=true]:text-white">
-          Se connecter
-        </a>
-      </li>
-
-      <!-- Mode sombre/clair -->
-      <li class="list-none" id="nav-mode">
-        <button type="button"
-          class="border-2 border-primary_light px-5 rounded-[20px] hover:text-black hover:bg-primary_light active:bg-[#bc16a5] transition duration-400 w-20 h-10">
-          <i class="fa-solid fa-moon"></i>
-        </button>
-      </li>
-    </ul>
-  </nav>
-</header>
-
-<!--  -->
+    <script src="../assets/js/theme.js" defer></script>
 <style>
   @keyframes float-letter {
     0% {
@@ -93,68 +43,118 @@
   }
 </style>
 
+  </head>
+  <body class="bg-[#142829] transition duration-300  dark:bg-primary_light ease-in-out">
+<header class="flex flex-row justify-between items-center bg-primary_dark dark:bg-primary_light h-[10vh] px-[40px] fixed top-0 left-0 right-0 z-50">
+  <img src="/public/img/logo.png" alt="logo" class="w-20 h-20" />
+  <nav class="text-[20px] text-primary_light w-[40%]" id="navbar">
+    <ul class="flex flex-row justify-between items-center">
+      <!-- Accueil -->
+      <li class="list-none group" id="nav-about">
+        <a href="../../index.html" class="relative pb-2 text-primary_light group-data-[active=true]:text-[#bc16a5] dark:text-primary_dark">
+          Accueil
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#bc16a5] transition-all duration-300 group-hover:w-full group-data-[active=true]:w-full"></span>
+        </a>
+      </li>
+      <!-- À propos -->
+      <li class="list-none group" id="nav-about">
+        <a href="about.html" class="relative pb-2 text-primary_light group-data-[active=true]:text-[#bc16a5]  dark:text-primary_dark">
+          À propos
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#bc16a5] transition-all duration-300 group-hover:w-full group-data-[active=true]:w-full"></span>
+        </a>
+      </li>
+      
+      <!-- Créer un compte -->
+      <li class="list-none group" id="nav-register">
+        <a href="create.html" class="relative pb-2 text-primary_light group-data-[active=true]:text-[#bc16a5] dark:text-primary_dark">
+          Créer un compte
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#bc16a5] transition-all duration-300 group-hover:w-full group-data-[active=true]:w-full"></span>
+        </a>
+      </li>
+
+      <!-- Se connecter -->
+      <li class="list-none group" id="nav-login">
+        <a href="login.html" class="  dark:text-primary_dark border-2 border-primary_light py-1 px-4 rounded-[20px] text-primary_light hover:bg-[#bc16a5] hover:border-[#bc16a5] transition duration-400 group-data-[active=true]:bg-[#bc16a5] group-data-[active=true]:border-[#bc16a5] group-data-[active=true]:text-white">
+          Se connecter
+        </a>
+      </li>
+
+      <!-- Mode sombre/clair -->
+      <li class="list-none" id="toggle">
+        <button type="button"
+          class="border-2 border-primary_light px-5 rounded-[20px] hover:text-black hover:bg-primary_light active:bg-[#bc16a5] transition duration-400 w-20 h-10 dark:border-primary_dark">
+          <i class="fa-solid fa-moon dark:text-primary_dark" id="iconToggle"></i>
+        </button>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<!--  -->
+
+
 
 <!-- BACKGROUND ANIMÉ DE LETTRES -->
 <div id="floating-letters" class="fixed inset-0 z-0 pointer-events-none"></div>
 
 <!--  -->
-    <main class="h-[90vh] bg-[#142829] flex justify-center items-center">
+    <main class="h-[90vh] bg-[#142829]  dark:bg-primary_light  flex justify-center items-center">
       <!-- CREATE ACOUNT -->
       <div
         id="registerSection"
-        class="bg-[#142829] shadow-[#BC16A5] rounded-lg w-full max-w-md p-8 m-auto shadow-[0_0_50px_rgba(10,10,10,10)]"
+        class="bg-[#142829]  dark:bg-primary_light  shadow-[#BC16A5] rounded-[20px] w-full max-w-md p-8 m-auto shadow-[0_0_50px_rgba(10,10,10,10)]"
       >
         <div class="flex justify-center items-center">
-          <p class="text-white py-2 px-6 transition r">Créer de compte</p>
+          <p class="text-white py-2 px-6 transition r dark:text-primary_dark">Créer de compte</p>
         </div>
 
         <form class="space-y-7">
           <div
-            class="flex justify-center items-center border-[1px] w-80% px-[2rem] py-2 border-white rounded-[10px] gap-2"
+            class="flex justify-center items-center border-[1px] w-80% px-[2rem] py-2 border-white rounded-[10px] gap-2 dark:bg-primary_light"
           >
             <i
-              class="fa-solid fa-envelope items-center text-[20px] text-primary_light"
+              class="fa-solid fa-envelope items-center text-[20px] text-primary_light  dark:text-primary_dark"
             ></i>
 
             <input
               type="email"
               id="email"
               name="email"
-              class="w-full px-4 py-2 rounded-md focus:outline-none bg-[#142829] text-primary_light"
+              class="w-full px-4 py-2 rounded-md focus:outline-none dark:bg-primary_light bg-[#142829] text-primary_light  dark:text-primary_dark"
               placeholder="Email"
               required
             />
           </div>
 
           <div
-            class="flex justify-center items-center border-[1px] w-80% px-[2rem] py-2 border-white rounded-[10px] gap-2"
+            class="flex justify-center items-center border-[1px] w-80% px-[2rem] py-2 border-white rounded-[10px] gap-2 "
           >
-            <i class="fas fa-lock text-[20px] text-primary_light"></i>
+            <i class="fas fa-lock text-[20px] text-primary_light  dark:text-primary_dark"></i>
             <input
               type="password"
               name="password"
               id="password_create"
               placeholder="Nouveau mot  de passe"
-              class="w-full px-4 py-2 rounded-md focus:outline-none bg-[#142829] text-primary_light"
+              class="w-full px-4 py-2 rounded-md focus:outline-none dark:bg-primary_light bg-[#142829] text-primary_light dark:text-primary_dark"
             />
             <i
-              class="fa-solid fa-eye-slash text-[20px] text-primary_light cursor-pointer"
+              class="fa-solid fa-eye-slash text-[20px] text-primary_light cursor-pointer  dark:text-primary_dark"
               id="togglePasswordAcount"
             ></i>
           </div>
           <div
             class="flex justify-center items-center border-[1px] w-80% px-[2rem] py-2 border-white rounded-[10px] gap-2"
           >
-            <i class="fas fa-lock text-[20px] text-primary_light"></i>
+            <i class="fas fa-lock text-[20px] text-primary_light  dark:text-primary_dark"></i>
             <input
               type="password"
               name="password"
               id="password_confirm"
               placeholder="Retaper votre mot de passe"
-              class="w-full px-4 py-2 rounded-md focus:outline-none bg-[#142829] text-primary_light"
+              class="w-full px-4 py-2 rounded-md focus:outline-none dark:bg-primary_light bg-[#142829] text-primary_light dark:text-primary_dark"
             />
             <i
-              class="fa-solid fa-eye-slash text-[20px] text-primary_light cursor-pointer"
+              class="fa-solid fa-eye-slash text-[20px] text-primary_light cursor-pointer  dark:text-primary_dark"
               id="togglePasswordConfirm"
             ></i>
           </div>
@@ -167,16 +167,17 @@
               valider
             </button>
           </div>
-          <div class="justify-center hidden">
+
+            <div class="justify-center hidden" id="mailConfirm">
             <a
               href="#"
               class="inline-flex justify-center items-center py-2 px-7 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-primary_light focus:outline-none transition mt-3"
             >
-              Mot de passe très faible(le mot de passe doit contenir: caractères
-              spéciaux,chiffres,majuscule)
+             Un compte a déjà existé avec cet email
             </a>
           </div>
-          <div class="justify-center hidden">
+       
+          <div class="justify-center hidden" id="champConfirm">
             <a
               href="#"
               class="inline-flex justify-center items-center py-2 px-7 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-primary_light focus:outline-none transition mt-3"
@@ -189,6 +190,7 @@
       </div>
     </main>
    <script src="../assets/js/authentification.js" type="module"></script>
+   
   </body>
   
 </html>
