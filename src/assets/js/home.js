@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log(`Langue sélectionnée: ${lang}`);
             
             // Mettre à jour l'affichage
-            const flagClass = lang === 'fr' ? 'fi-fr' : 'fi-gb';
+            const flagClass = lang === 'fr' ? 'fi-fr' : 'fi-us';
             languageSelector.innerHTML = `
                 <span class="fi ${flagClass} mr-2"></span>
                 <i class="fas fa-chevron-down text-xs text-white"></i>

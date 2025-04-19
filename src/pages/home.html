@@ -93,7 +93,7 @@
                             <span class="fi fi-fr"></span> Français
                         </button>
                         <button data-lang="en" class="block w-full text-1xl text-left px-4 py-3 rounded-lg border-2 hover:border-2 hover:border-primary_color hover:rounded-lg items-center">
-                            <span class="fi fi-gb mr-2"></span> English
+                            <span class="fi fi-us mr-2"></span> English
                         </button>
                     </div>
                 </div>
@@ -269,7 +269,7 @@
                                         <i class="fa-solid fa-star text-yellow-400 hover:text-yellow-500 transition-colors duration-200"></i>
                                     </div>
                                     <div class="w-[30%]">
-                                        <button class="bg-[#142829] text-xl text-white w-full h-[95%] rounded-lg py-1 px-3
+                                        <button  onclick="window.location.href='defi.html'" class="bg-[#142829] text-xl text-white w-full h-[95%] rounded-lg py-1 px-3
                                                     hover:bg-[#1e3d3d] hover:shadow-md transition-all duration-200
                                                     active:bg-[#0a1a1a] active:scale-95">
                                             Play
@@ -297,7 +297,7 @@
                                         <i class="fa-solid fa-star text-yellow-400 hover:text-yellow-500 transition-colors duration-200"></i>
                                     </div>
                                     <div class="w-[30%]">
-                                        <button class="bg-[#142829] text-xl text-white w-full h-[95%] rounded-lg py-1 px-3
+                                        <button onclick="redirect('crabe', 'medium')" class="bg-[#142829] text-xl text-white w-full h-[95%] rounded-lg py-1 px-3
                                                     hover:bg-[#1e3d3d] hover:shadow-md transition-all duration-200
                                                     active:bg-[#0a1a1a] active:scale-95">
                                             Play
@@ -325,7 +325,7 @@
                                         <i class="fa-solid fa-star text-yellow-400 hover:text-yellow-500 transition-colors duration-200"></i>
                                     </div>
                                     <div class="w-[30%]">
-                                        <button class="bg-[#142829] text-xl text-white w-full h-[95%] rounded-lg py-1 px-3
+                                        <button onclick="redirect('crabe', 'difficult')" class="bg-[#142829] text-xl text-white w-full h-[95%] rounded-lg py-1 px-3
                                                     hover:bg-[#1e3d3d] hover:shadow-md transition-all duration-200
                                                     active:bg-[#0a1a1a] active:scale-95">
                                             Play
@@ -356,7 +356,7 @@
                                         <i class="fa-solid fa-star text-yellow-400 hover:text-yellow-500 transition-colors duration-200"></i>
                                     </div>
                                     <div class="w-[30%]">
-                                        <button class="bg-[#142829] text-xl text-white w-full h-[95%] rounded-lg py-1 px-3
+                                        <button onclick="redirect('crabe', 'easy')" class="bg-[#142829] text-xl text-white w-full h-[95%] rounded-lg py-1 px-3
                                                     hover:bg-[#1e3d3d] hover:shadow-md transition-all duration-200
                                                     active:bg-[#0a1a1a] active:scale-95">
                                             Play
@@ -875,6 +875,7 @@
         <script src="https://cdn.jsdelivr.net/npm/chart.js" type="module"></script>
         <script src="../assets/js/dashboard.js" type="module"></script>
         <script src="../assets/js/apropos.js" type="module"></script>
+        <script src="../assets/js/defi.js" type="module"></script>
     </body>
 </html>
 

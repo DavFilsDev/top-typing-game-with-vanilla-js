@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Top-typing-game</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- fontawesome -->
-    <link rel="stylesheet" href="src/assets/css/output/global-output.css">
+    <link rel="stylesheet" href="../assets/css/output/global-output.css">
      <!-- tailwindcss -->
-    <script src="/src/assets/js/index.js" defer></script>
+    <script src="../assets/js/index.js" type="module" defer></script>
      
     <script src="https://cdn.tailwindcss.com" defer></script> <!-- tailwindcss cdn -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css">
@@ -84,44 +84,13 @@
 </head>
 
 <body >
-    <header class="flex flex-row justify-between items-center bg-[#142829] h-[10vh] px-[40px]" >
-        <img src="/public/img/logo.png" alt="logo" class="w-20 h-20" />
-        <nav class="text-[20px] text-primary_light w-[30%]" id="navbar">
-          <ul class="flex flex-row justify-between items-center">
-            <!-- À propos -->
-            <li class="list-none group" id="nav-about">
-              <a href="src/pages/about.html" class="relative pb-2 text-primary_light group-data-[active=true]:text-[#bc16a5]">
-                À propos
-                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#bc16a5] transition-all duration-300 group-hover:w-full group-data-[active=true]:w-full"></span>
-              </a>
-            </li>
-            
-            <!-- Créer un compte -->
-            <li class="list-none group" id="nav-register">
-              <a href="src/pages/create.html" class="relative pb-2 text-primary_light group-data-[active=true]:text-[#bc16a5]">
-                Créer un compte
-                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#bc16a5] transition-all duration-300 group-hover:w-full group-data-[active=true]:w-full"></span>
-              </a>
-            </li>
+    <header class="flex flex-row justify-between items-center bg-[#142829] h-[10vh] px-[40px] z-50">
+        <div class="flex flex-col justify-around items-center w-full h-[13%]">
+            <h1 class="text-6xl text-[#bc16a5] [text-shadow:_4px_4px_10px_rgba(188,22,165,1)]">Top-typing game</h1>
+            <h2 class="text-xl text-white">Les défis</h2>
+        </div>
+    </header>
       
-            <!-- Se connecter -->
-            <li class="list-none group" id="nav-login">
-              <a href="src/pages/login.html" class="border-2 border-primary_light py-1 px-4 rounded-[20px] text-primary_light hover:bg-[#bc16a5] hover:border-[#bc16a5] transition duration-400 group-data-[active=true]:bg-[#bc16a5] group-data-[active=true]:border-[#bc16a5] group-data-[active=true]:text-white">
-                Se connecter
-              </a>
-            </li>
-      
-            <!-- Mode sombre/clair -->
-            <li class="list-none" id="nav-mode">
-              <button type="button"
-                class="border-2 border-primary_light px-5 rounded-[20px] hover:text-black hover:bg-primary_light active:bg-[#bc16a5] transition duration-400 w-20 h-10">
-                <i class="fa-solid fa-moon"></i>
-              </button>
-            </li>
-          </ul>
-        </nav>
-      </header>
-
     <main class="flex flex-col items-center gap-0 flex-grow h-[90vh] w-[100vw] bg-primary_dark">
         <h1 class="text-center text-4xl text-primary_color font-bold mt-[50px] mb-[20px]">Top-typing-game</h1>
         <div class="flex flex-col items-center h-[80%] w-[80%]">
@@ -201,7 +170,7 @@
                                 <span class="fi fi-fr"></span>  <!-- Pour la France --> Français
                             </button>
                             <button data-lang="en" class="block w-full text-1xl text-left px-4 py-3 rounded-lg border-2 hover:border-2 hover:border-primary_color hover:rounded-lg items-center">
-                                <span class="fi fi-gb mr-2"></span> English
+                                <span class="fi fi-us mr-2"></span> English
                             </button>
                         </div>
                     </div>
