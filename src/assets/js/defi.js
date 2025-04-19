@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const indicator = document.createElement('div');
         indicator.id = 'pause-indicator';
         indicator.className = 'absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white text-2xl z-10 cursor-pointer';
-        indicator.textContent = 'PAUSE - Cliquez pour continuer';
+        indicator.textContent = currentLang === 'fr' ? 'PAUSE - Cliquez pour continuer' : 'PAUSED - Click to continue';
         indicator.addEventListener('click', resumeTest);
         testContainer.appendChild(indicator);
     };
@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Modifier l'affichage
         document.getElementById('time-unit').style.display = 'none';
-        document.getElementById('time').textContent = 'terminé';
+        document.getElementById('time').textContent = currentLang === 'fr' ? 'terminé' : 'finished';
         document.querySelector('.timer').classList.add('text-red-500');
         
         wpmDisplay.textContent = wpm;
@@ -263,7 +263,7 @@ document.addEventListener('DOMContentLoaded', function() {
     restartBtn.addEventListener('click', initTest);
     retryBtn.addEventListener('click', initTest);
 
-    // Gestion du menu des polices
+    // Modification clé ici - suppression de la pause automatique pour les menus
     document.getElementById('font-selector').addEventListener('click', function(e) {
         e.stopPropagation();
         document.getElementById('font-menu').classList.toggle('hidden');
@@ -273,9 +273,79 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', function() {
             document.getElementById('text-display').style.fontFamily = this.getAttribute('data-font');
             document.getElementById('font-menu').classList.add('hidden');
-            initTest();
+            initTest(); // Redémarre le test
         });
     });
+
+    // Gestion des langues
+    const translations = {
+        fr: {
+            challenge: "Faire un défi",
+            contact: "Nous contacter",
+            pause: "Pause",
+            mode: "Mode:",
+            easy: "Facile",
+            medium: "Moyen",
+            hard: "Difficile",
+            time: "Temps:",
+            restart: "Recommencer",
+            results: "Résultats",
+            wpm: "WPM:",
+            accuracy: "Précision:",
+            retry: "Nouveau test"
+        },
+        en: {
+            challenge: "Take a challenge",
+            contact: "Contact us",
+            pause: "Pause",
+            mode: "Mode:",
+            easy: "Easy",
+            medium: "Medium",
+            hard: "Hard",
+            time: "Time:",
+            restart: "Restart",
+            results: "Results",
+            wpm: "WPM:",
+            accuracy: "Accuracy:",
+            retry: "Try again"
+        }
+    };
+
+    let currentLang = 'fr';
+
+    // Modification clé ici - suppression de la pause automatique pour les menus
+    document.getElementById('language-selector').addEventListener('click', function(e) {
+        e.stopPropagation();
+        document.getElementById('language-menu').classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('#language-menu button').forEach(button => {
+        button.addEventListener('click', function() {
+            currentLang = this.getAttribute('data-lang');
+            updateLanguage();
+            document.getElementById('language-menu').classList.add('hidden');
+            document.querySelector('#language-selector .fi').className = 
+                currentLang === 'fr' ? 'fi fi-fr mr-2' : 'fi fi-us mr-2';
+            initTest(); // Redémarre le test
+        });
+    });
+
+    function updateLanguage() {
+        const t = translations[currentLang];
+        document.querySelector('.challenge-text').textContent = t.challenge;
+        document.querySelector('.contact-text').textContent = t.contact;
+        document.querySelector('.pause-text').textContent = t.pause;
+        document.querySelector('label[for="mode"]').textContent = t.mode;
+        document.querySelector('#mode option[value="easy"]').textContent = t.easy;
+        document.querySelector('#mode option[value="medium"]').textContent = t.medium;
+        document.querySelector('#mode option[value="hard"]').textContent = t.hard;
+        document.querySelector('.timer').innerHTML = `${t.time} <span id="time">${timeLeft}</span>s`;
+        document.getElementById('restart-btn').textContent = t.restart;
+        document.querySelector('#results h2').textContent = t.results;
+        document.querySelector('#results div div:first-child').innerHTML = `${t.wpm} <span id="wpm" class="font-bold">0</span>`;
+        document.querySelector('#results div div:last-child').innerHTML = `${t.accuracy} <span id="accuracy" class="font-bold">0</span>%`;
+        document.getElementById('retry-btn').textContent = t.retry;
+    }
 
     // Navigation
     document.getElementById('challenge-btn').addEventListener('click', function() {
@@ -286,7 +356,7 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = "/contact";
     });
 
-    // Pause avec Ctrl+X
+    // Pause avec Ctrl+X (conservé inchangé)
     document.addEventListener('keydown', function(e) {
         if (e.ctrlKey && e.key === 'x' && testActive) {
             togglePause();
@@ -298,6 +368,9 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('click', function(e) {
         if (!e.target.closest('#font-selector') && !e.target.closest('#font-menu')) {
             document.getElementById('font-menu').classList.add('hidden');
+        }
+        if (!e.target.closest('#language-selector') && !e.target.closest('#language-menu')) {
+            document.getElementById('language-menu').classList.add('hidden');
         }
     });
 
