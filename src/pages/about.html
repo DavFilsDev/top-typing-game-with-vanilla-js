@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Top-typing-game login</title>
@@ -11,331 +11,284 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
   </head>
-<body class="bg-[#142829] transition duration-300">
-<header class="flex flex-row justify-between items-center bg-[#142829] h-[10vh] px-[40px] fixed top-0 left-0 right-0 z-50">
-  <img src="/public/img/logo.png" alt="logo" class="w-20 h-20" />
-  <nav class="text-[20px] text-primary_light w-[30%]" id="navbar">
-    <ul class="flex flex-row justify-between items-center">
-      <!-- À propos -->
-      <li class="list-none group" id="nav-about">
-        <a href="about.html" class="relative pb-2 text-primary_light group-data-[active=true]:text-[#bc16a5]">
-          À propos
-          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#bc16a5] transition-all duration-300 group-hover:w-full group-data-[active=true]:w-full"></span>
-        </a>
-      </li>
-      
-      <!-- Créer un compte -->
-      <li class="list-none group" id="nav-register">
-        <a href="create.html" class="relative pb-2 text-primary_light group-data-[active=true]:text-[#bc16a5]">
-          Créer un compte
-          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#bc16a5] transition-all duration-300 group-hover:w-full group-data-[active=true]:w-full"></span>
-        </a>
-      </li>
+  <body class="bg-[#142829] transition duration-300">
+    <header class="flex flex-row justify-between items-center bg-[#142829] h-[10vh] px-[40px] fixed top-0 left-0 right-0 z-50">
+      <img src="/public/img/logo.png" alt="logo" class="w-20 h-20" />
+      <nav class="text-[20px] text-primary_light w-[30%]" id="navbar">
+        <ul class="flex flex-row justify-between items-center">
+          <!-- À propos -->
+          <li class="list-none group" id="nav-about">
+            <a href="about.html" class="relative pb-2 text-primary_light group-data-[active=true]:text-[#bc16a5]">
+              À propos
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#bc16a5] transition-all duration-300 group-hover:w-full group-data-[active=true]:w-full"></span>
+            </a>
+          </li>
+          
+          <!-- Créer un compte -->
+          <li class="list-none group" id="nav-register">
+            <a href="create.html" class="relative pb-2 text-primary_light group-data-[active=true]:text-[#bc16a5]">
+              Créer un compte
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#bc16a5] transition-all duration-300 group-hover:w-full group-data-[active=true]:w-full"></span>
+            </a>
+          </li>
 
-      <!-- Se connecter -->
-      <li class="list-none group" id="nav-login">
-        <a href="login.html" class="border-2 border-primary_light py-1 px-4 rounded-[20px] text-primary_light hover:bg-[#bc16a5] hover:border-[#bc16a5] transition duration-400 group-data-[active=true]:bg-[#bc16a5] group-data-[active=true]:border-[#bc16a5] group-data-[active=true]:text-white">
-          Se connecter
-        </a>
-      </li>
+          <!-- Se connecter -->
+          <li class="list-none group" id="nav-login">
+            <a href="login.html" class="border-2 border-primary_light py-1 px-4 rounded-[20px] text-primary_light hover:bg-[#bc16a5] hover:border-[#bc16a5] transition duration-400 group-data-[active=true]:bg-[#bc16a5] group-data-[active=true]:border-[#bc16a5] group-data-[active=true]:text-white">
+              Se connecter
+            </a>
+          </li>
 
-      <!-- Mode sombre/clair -->
-      <li class="list-none" id="nav-mode">
-        <button type="button"
-          class="border-2 border-primary_light px-5 rounded-[20px] hover:text-black hover:bg-primary_light active:bg-[#bc16a5] transition duration-400 w-20 h-10">
-          <i class="fa-solid fa-moon"></i>
-        </button>
-      </li>
-    </ul>
-  </nav>
-</header>
-    <main class="h-[90vh] bg-[#142829] flex justify-center items-center">
+          <!-- Mode sombre/clair -->
+          <li class="list-none" id="nav-mode">
+            <button type="button"
+              class="border-2 border-primary_light px-5 rounded-[20px] hover:text-black hover:bg-primary_light active:bg-[#bc16a5] transition duration-400 w-20 h-10">
+              <i class="fa-solid fa-moon"></i>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+      <main class="h-[90vh] bg-[#142829] flex justify-center items-center">
 
-          <!-- ABOUT SECTION HTML -->
-
-      <div class="w-fit h-[90vh] mt-[15rem] bg-primary_dark">
-        <div
-          class="grid-row-2 w-[70%] h-[65%] mx-auto border-[1px] border-primary_color py-[1rem] mt-20"
-          id="about"
-        >
-          <div class="pb-[25px]">
-            <h1 class="text-center text-primary_color text-[2.5rem] font-bold">
-              Top-typing TEST
-            </h1>
-            <p class="text-center text-primary_light text-[1.5rem]">
-              "Améliorer votre vitesse et précision de frappe grâce à des défis
-              ludiques"
-            </p>
-          </div>
-          <div class="flex justify-evenly text-primary_light h-[50%] pt-[25px]">
-            <img src="/public/img/keyboardYoupi.png" alt="keyboard" />
-            <div
-              class="w-[60%] flex flex-col gap-y-[2rem] text-[18px] text-justify"
-            >
-              <p>
-                Top-typing est bien plus qu'un simple typing test en ligne mais
-                offre une expérience immersive pour maîtriser le clavier comme
-                un pro.
-              </p>
-              <p>
-                Que tu sois débutant ou pro du clavier, yu trouveras ici de qui
-                perfectionner ta vitesse de frappe (jusqu’à + 100 WPM)
-              </p>
-              <p>
-                Notre application aide les étudiants et professionnels à
-                maîtriser le clavier grâce à des exercices personnalisés et des
-                statistiques détaillées.
-              </p>
-
-              <button
-                type="submit"
-                class="bg-primary_color text-primary_light w-[27%] py-2 px-6 rounded-md hover:bg-primary_light hover:text-primary_color focus:outline-none focus:ring-2 focus:ring-primary_color focus:ring-offset-2 transition r"
-              >
-                <a href="/index.html">Faire un Test</a>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="relative h-[30vh] w-32 mx-auto top-10" id="aboutIcon">
-          <i
-            class="fas fa-chevron-down text-[5rem] absolute top-0 animate-bounce bg-gradient-to-b from-primary_color to-primary_light bg-clip-text text-transparent"
-          ></i>
-
-          <i
-            class="fas fa-chevron-down text-[5rem] absolute top-[1.5rem] animate-bounce bg-gradient-to-b from-primary_color to-primary_light bg-clip-text text-transparent animation-delay-200"
-          ></i>
-        </div>
-
-        <!-- ABOUT TECHNICALS SECTION -->
-        <div
-          id="aboutTechnical"
-          class="h-[80vh] w-[80%] mx-auto flex-column bg-primary_dark mt-10"
-        >
-          <div class="bg-primary_dark">
-            <div class="flex flex-row justify-center items-center">
-              <h1 class="pb-[3rem] text-4xl text-primary_light">
-                Fonctionalités clés
-              </h1>
-              <p
-                class="absolute border-2 border-primary_color w-[10%] ml-[1rem]"
-              ></p>
-            </div>
-
-            <div
-              class="mt-6 px-[4rem] space-y-6 lg:grid lg:grid-cols-3 lg:space-y-0 lg:gap-x-[7rem]"
-            >
-              <div class="group relative">
-                <img
-                  src="https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-02-edition-01.jpg"
-                  alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug."
-                  class="w-full h-[60%] rounded-tr-[3rem] rounded-bl-[3rem] bg-white object-cover group-hover:opacity-75 max-sm:h-80 sm:aspect-2/1 lg:aspect-square"
-                />
-                <h3 class="mt-6 text-sm text-primary_light leading-10">
-                  <p class="text-base font-semibold text-[30px]">Mode défi</p>
-                  <p>
-                    <span class="absolute inset-0"></span>
-                    Textes chronométrés avec niveaux de difficulté
+        <div class="w-full h-[87%] overflow-y-auto scroll-smooth">
+          <!-- Section Principale À Propos -->
+          <div class="grid-row-2 w-[70%] min-h-[64vh] mx-auto border border-[#bc16a5]/30 py-[1rem] mt-10 bg-white/5 backdrop-blur-md rounded-xl
+                      animate-[fadeIn_1s_ease-out]">
+              <div class="pb-[25px] animate-[slideDown_1s_ease-out]">
+                  <h1 class="text-center text-[#bc16a5] text-[2.5rem] font-bold">
+                      Top-typing TEST
+                  </h1>
+                  <p class="text-center text-white/80 text-[1.5rem]">
+                      "Améliorer votre vitesse et précision de frappe grâce à des défis ludiques"
                   </p>
-                </h3>
               </div>
-              <div class="group relative">
-                <img
-                  src="https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-02-edition-01.jpg"
-                  alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug."
-                  class="w-full h-[60%] rounded-tr-[3rem] rounded-bl-[3rem] bg-white object-cover group-hover:opacity-75 max-sm:h-80 sm:aspect-2/1 lg:aspect-square"
-                />
-                <h3 class="mt-6 text-sm text-primary_light leading-10">
-                  <p class="text-base font-semibold text-[30px]">
-                    Tableaux de bord
-                  </p>
-                  <p>
-                    <span class="absolute inset-0"></span>
-                    Suivi des progrès (WPM, précision, historique)
-                  </p>
-                </h3>
-              </div>
-              <div class="group relative">
-                <img
-                  src="https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-02-edition-01.jpg"
-                  alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug."
-                  class="w-full h-[60%] rounded-tr-[3rem] rounded-bl-[3rem] bg-white object-cover group-hover:opacity-75 max-sm:h-80 sm:aspect-2/1 lg:aspect-square"
-                />
-                <h3 class="mt-6 text-sm text-primary_light leading-10">
-                  <p class="text-base font-semibold text-[30px]">Classements</p>
-                  <p>
-                    <span class="absolute inset-0"></span>
-                    Compétition avec d'autres utilisateurs
-                  </p>
-                </h3>
-              </div>
+              <div class="flex justify-evenly text-white/80 h-[50%] pt-[25px] animate-[slideUp_1s_ease-out]">
+                  <img src="/public/img/keyboardYoupi.png" alt="keyboard" 
+                       class="w-1/3 object-contain animate-[float_4s_ease-in-out_infinite]">
+                  <div class="w-[60%] flex flex-col gap-y-[2rem] text-[18px] text-justify">
+                      <p class="hover:text-white transition-colors duration-300 hover:scale-[1.02]">
+                          Top-typing est bien plus qu'un simple typing test en ligne mais offre une expérience immersive pour maîtriser le clavier comme un pro.
+                      </p>
+                      <p class="hover:text-white transition-colors duration-300 hover:scale-[1.02]">
+                          Que tu sois débutant ou pro du clavier, tu trouveras ici de quoi perfectionner ta vitesse de frappe (jusqu'à + 100 WPM)
+                      </p>
+                      <p class="hover:text-white transition-colors duration-300 hover:scale-[1.02]">
+                          Notre application aide les étudiants et professionnels à maîtriser le clavier grâce à des exercices personnalisés et des statistiques détaillées.
+                      </p>
+  
+                      <button type="submit"
+                              class="bg-[#bc16a5] text-white w-[27%] py-2 px-6 rounded-md 
+                                     hover:bg-white hover:text-[#bc16a5] focus:outline-none 
+                                     focus:ring-2 focus:ring-[#bc16a5] focus:ring-offset-2 
+                                     transition-all duration-300 hover:scale-105 hover:shadow-lg
+                                     animate-[pulse_2s_infinite]">
+                          <a href="/index.html">Faire un Test</a>
+                      </button>
+                  </div>
             </div>
           </div>
-          <div class="flex-column mx-auto w-[80vw]">
-            <div class="flex flex-row justify-center items-center">
-              <h1 class="pb-[3rem] text-4xl text-primary_light">
-                Stack technique
-              </h1>
-              <p
-                class="absolute border-2 border-primary_color w-[10%] ml-[1rem]"
-              ></p>
-            </div>
-
-            <div
-              class="mt-6 px-[4rem] space-y-6 lg:grid lg:grid-cols-3 lg:space-y-0 lg:gap-x-[7rem]"
-            >
-              <div class="group relative">
-                <img
-                  src="https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-02-edition-01.jpg"
-                  alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug."
-                  class="w-full h-[70%] rounded-lg bg-white object-cover group-hover:opacity-75 max-sm:h-80 sm:aspect-2/1 lg:aspect-square"
-                />
-                <p
-                  class="text-center pt-5 text-primary_light font-semibold text-[30px]"
-                >
-                  HTML
-                </p>
-              </div>
-              <div class="group relative">
-                <img
-                  src="https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-02-edition-01.jpg"
-                  alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug."
-                  class="w-full h-[70%] rounded-lg bg-white object-cover group-hover:opacity-75 max-sm:h-80 sm:aspect-2/1 lg:aspect-square"
-                />
-                <p
-                  class="text-center pt-5 text-primary_light font-semibold text-[30px]"
-                >
-                  TAILWINDCSS
-                </p>
-              </div>
-              <div class="group relative">
-                <img
-                  src="https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-02-edition-01.jpg"
-                  alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug."
-                  class="w-full h-[70%] rounded-lg bg-white object-cover group-hover:opacity-75 max-sm:h-80 sm:aspect-2/1 lg:aspect-square"
-                />
-                <p
-                  class="text-center pt-5 text-primary_light font-semibold text-[30px]"
-                >
-                  SUPABASE
-                </p>
-              </div>
-            </div>
+  
+          <!-- Flèche animée -->
+          <div class="relative h-[10vh] w-32 mx-auto top-10 animate-[bounce_2s_infinite]" id="aboutIcon">
+              <i class="fas fa-chevron-down text-[5rem] absolute top-0 text-[#bc16a5]"></i>
+              <i class="fas fa-chevron-down text-[5rem] absolute top-[1.5rem] text-[#bc16a5] opacity-60"></i>
           </div>
-
-          <!-- TEAM DEVELOPPER -->
-          <div class="flex flex-col mt-[2rem]">
-            <div class="flex flex-row justify-center items-center">
-              <h1 class="pb-[3rem] text-4xl text-primary_light">Équipes</h1>
-              <p
-                class="absolute border-2 border-primary_color w-[5%] ml-[1rem]"
-              ></p>
-            </div>
-            <div class="flex flex-row w-[50vw] items-center mx-auto">
-              <div
-                class="flex flex-col items-center justify-center p-6 max-w-md mx-auto border-2 border-primary_color rounded-[15px] pb-[4rem] mb-10"
-              >
-                <div class="relative mb-6">
-                  <img
-                    src="/public/img/keyboardYoupi.png"
-                    alt="Application de dactylographie"
-                    class="rounded-full w-40 h-40 object-cover shadow-lg"
-                  />
-                </div>
-
-                <p
-                  class="text-center text-primary_light text-lg leading-relaxed"
-                >
-                  Notre application aide les étudiants et professionnels à
-                  maîtriser le clavier grâce à des exercices personnalisés et
-                  des statistiques détaillées.
-                </p>
+  
+          <!-- Fonctionnalités clés -->
+          <div id="aboutTechnical" class="min-h-[80vh] w-[80%] mx-auto bg-transparent py-10">
+              <div class="flex flex-col justify-between items-center mb-14 animate-[fadeIn_1s_ease-out]">
+                  <h1 class="text-4xl text-white">Fonctionalités clés</h1>
+                  <div class="w-24 h-1 bg-[#bc16a5] ml-4"></div>
               </div>
-
-              <div
-                class="flex flex-col items-center justify-center p-6 max-w-md mx-auto border-2 border-primary_color rounded-[15px] pb-[4rem] mb-10"
-              >
-                <div class="relative mb-6">
-                  <img
-                    src="/public/img/keyboardYoupi.png"
-                    alt="Application de dactylographie"
-                    class="rounded-full w-40 h-40 object-cover shadow-lg"
-                  />
-                </div>
-
-                <p
-                  class="text-center text-primary_light text-lg leading-relaxed"
-                >
-                  Notre application aide les étudiants et professionnels à
-                  maîtriser le clavier grâce à des exercices personnalisés et
-                  des statistiques détaillées.
-                </p>
+  
+              <div class="mt-6 px-[4rem] space-y-6 lg:grid lg:grid-cols-3 lg:space-y-0 lg:gap-x-[7rem]">
+                  <!-- Carte Mode Défi -->
+                  <div class="group relative animate-[slideUp_1s_ease-out_0.2s]">
+                      <div class="w-full h-64 rounded-tr-[3rem] rounded-bl-[3rem] bg-gradient-to-br from-[#bc16a5]/20 to-[#16bcbc]/20
+                                  border border-[#bc16a5]/30 overflow-hidden transition-all duration-500 group-hover:scale-105">
+                          <div class="absolute inset-0 bg-[url('https://source.unsplash.com/random/600x400/?keyboard')] 
+                                      bg-cover bg-center opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
+                          <div class="absolute inset-0 flex items-center justify-center">
+                              <div class="text-center p-6 backdrop-blur-sm rounded-xl">
+                                  <h3 class="text-2xl font-bold text-white mb-2">Mode défi</h3>
+                                  <p class="text-white/80">Textes chronométrés avec niveaux de difficulté</p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+  
+                  <!-- Carte Tableaux de bord -->
+                  <div class="group relative animate-[slideUp_1s_ease-out_0.4s]">
+                      <div class="w-full h-64 rounded-tr-[3rem] rounded-bl-[3rem] bg-gradient-to-br from-[#16bcbc]/20 to-[#bc16a5]/20
+                                  border border-[#bc16a5]/30 overflow-hidden transition-all duration-500 group-hover:scale-105">
+                          <div class="absolute inset-0 bg-[url('https://source.unsplash.com/random/600x400/?dashboard')] 
+                                      bg-cover bg-center opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
+                          <div class="absolute inset-0 flex items-center justify-center">
+                              <div class="text-center p-6 backdrop-blur-sm rounded-xl">
+                                  <h3 class="text-2xl font-bold text-white mb-2">Tableaux de bord</h3>
+                                  <p class="text-white/80">Suivi des progrès (WPM, précision, historique)</p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+  
+                  <!-- Carte Classements -->
+                  <div class="group relative animate-[slideUp_1s_ease-out_0.6s]">
+                      <div class="w-full h-64 rounded-tr-[3rem] rounded-bl-[3rem] bg-gradient-to-br from-[#bc16a5]/20 to-[#16bcbc]/20
+                                  border border-[#bc16a5]/30 overflow-hidden transition-all duration-500 group-hover:scale-105">
+                          <div class="absolute inset-0 bg-[url('https://source.unsplash.com/random/600x400/?leaderboard')] 
+                                      bg-cover bg-center opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
+                          <div class="absolute inset-0 flex items-center justify-center">
+                              <div class="text-center p-6 backdrop-blur-sm rounded-xl">
+                                  <h3 class="text-2xl font-bold text-white mb-2">Classements</h3>
+                                  <p class="text-white/80">Compétition avec d'autres utilisateurs</p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
               </div>
-            </div>
+  
+              <!-- Stack technique -->
+              <div class="mt-20">
+                  <div class="flex flex-col justify-center items-center mb-12 animate-[fadeIn_1s_ease-out]">
+                      <h1 class="text-4xl text-white">Stack technique</h1>
+                      <div class="w-24 h-1 bg-[#bc16a5] ml-4"></div>
+                  </div>
+          
+                  <div class="grid grid-cols-3 gap-10 px-10">
+                      <!-- HTML -->
+                      <div class="text-center animate-[zoomIn_1s_ease-out]">
+                          <div class="w-full h-48 bg-white/10 backdrop-blur-md rounded-lg flex items-center justify-center
+                                      border border-[#bc16a5]/30 hover:border-[#bc16a5]/80 transition-all duration-500">
+                              <i class="fab fa-html5 text-[6rem] text-[#E34F26]"></i>
+                          </div>
+                          <p class="pt-5 text-white font-semibold text-[30px]">HTML</p>
+                      </div>
+                  
+                      <!-- Tailwind CSS -->
+                      <div class="text-center animate-[zoomIn_1s_ease-out_0.2s]">
+                          <div class="w-full h-48 bg-white/10 backdrop-blur-md rounded-lg flex items-center justify-center
+                                      border border-[#bc16a5]/30 hover:border-[#bc16a5]/80 transition-all duration-500">
+                              <i class="fab fa-css3-alt text-[6rem] text-[#38B2AC]"></i>
+                          </div>
+                          <p class="pt-5 text-white font-semibold text-[30px]">TAILWINDCSS</p>
+                      </div>
+                  
+                      <!-- JavaScript -->
+                      <div class="text-center animate-[zoomIn_1s_ease-out_0.4s]">
+                          <div class="w-full h-48 bg-white/10 backdrop-blur-md rounded-lg flex items-center justify-center
+                                      border border-[#bc16a5]/30 hover:border-[#bc16a5]/80 transition-all duration-500">
+                              <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" 
+                                      alt="JavaScript Logo"
+                                      class="h-[70%] object-contain">
+                          </div>
+                          <p class="pt-5 text-white font-semibold text-[30px]">JAVASCRIPT</p>
+                      </div>
+                  </div>
+              </div>
+  
+              <!-- Équipe -->
+              <div class="mt-20">
+                  <div class="flex flex-col justify-center items-center mb-12 animate-[fadeIn_1s_ease-out]">
+                      <h1 class="text-4xl text-white">Équipe</h1>
+                      <div class="w-16 h-1 bg-[#bc16a5] ml-4"></div>
+                  </div>
+  
+                  <div class="flex flex-wrap justify-center gap-10 px-10">
+                      <!-- Membre 1 - Développeuse Full Stack -->
+                      <div class="flex flex-col items-center p-6 max-w-sm bg-white/5 backdrop-blur-md rounded-xl border border-[#bc16a5]/30
+                                  hover:border-[#bc16a5]/80 transition-all duration-500 animate-[slideUp_1s_ease-out]">
+                          <div class="relative mb-6">
+                              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=200&q=80" 
+                                  alt="Développeuse Full Stack"
+                                  class="rounded-full w-40 h-40 object-cover border-4 border-[#bc16a5] shadow-lg
+                                          hover:scale-110 transition-transform duration-500">
+                          </div>
+                          <h3 class="text-2xl font-bold text-[#bc16a5] mb-2">Asminie RAZAFIARIVELO</h3>
+                          <h4 class="text-xl text-white/70 mb-3">Développeuse Full Stack</h4>
+                          <p class="text-center text-white/80">
+                              Architecte des interfaces utilisateur et des APIs, elle maîtrise à la perfection 
+                              React, Node.js et les architectures microservices. Passionnée par l'expérience 
+                              utilisateur et les performances frontend.
+                          </p>
+                          <div class="mt-4 flex space-x-4">
+                              <i class="fab fa-github text-white/60 hover:text-[#bc16a5] transition-colors duration-300"></i>
+                              <i class="fab fa-linkedin text-white/60 hover:text-[#bc16a5] transition-colors duration-300"></i>
+                          </div>
+                      </div>
+
+                      <!-- Membre 2 - Data Scientist -->
+                      <div class="flex flex-col items-center p-6 max-w-sm bg-white/5 backdrop-blur-md rounded-xl border border-[#16bcbc]/30
+                                  hover:border-[#16bcbc]/80 transition-all duration-500 animate-[slideUp_1s_ease-out_0.2s]">
+                          <div class="relative mb-6">
+                              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=200&q=80" 
+                                  alt="Data Scientist"
+                                  class="rounded-full w-40 h-40 object-cover border-4 border-[#16bcbc] shadow-lg
+                                          hover:scale-110 transition-transform duration-500">
+                          </div>
+                          <h3 class="text-2xl font-bold text-[#16bcbc] mb-2">Fanampinirina Miharisoa David Fils RATIANDRAIBE</h3>
+                          <h4 class="text-xl text-white/70 mb-3">Data Scientist</h4>
+                          <p class="text-center text-white/80">
+                              Expert en machine learning et analyse de données, il transforme les statistiques 
+                              de frappe en insights actionnables. Spécialiste Python, TensorFlow et des algorithmes 
+                              de prédiction de performance.
+                          </p>
+                          <div class="mt-4 flex space-x-4">
+                              <i class="fab fa-github text-white/60 hover:text-[#16bcbc] transition-colors duration-300"></i>
+                              <i class="fab fa-linkedin text-white/60 hover:text-[#16bcbc] transition-colors duration-300"></i>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+  
+              <!-- Contact -->
+              <div class="mt-20 mb-20">
+                  <div class="flex flex-col items-center animate-[fadeIn_1s_ease-out]">
+                      <h1 class="text-4xl text-white mb-4">Contactez-nous</h1>
+                      <div class="w-32 h-1 bg-[#bc16a5] mb-6"></div>
+                      <p class="text-white/80 text-xl mb-10">
+                          Veuillez remplir ce formulaire pour nous contacter
+                      </p>
+                  </div>
+  
+                  <div class="max-w-2xl mx-auto p-6 bg-white/5 backdrop-blur-md rounded-xl border border-[#bc16a5]/30
+                              animate-[slideUp_1s_ease-out]">
+                      <form class="space-y-6">
+                          <!-- Email -->
+                          <div>
+                              <label for="email" class="block text-lg text-white/80 mb-2">Email</label>
+                              <input type="email" id="email" name="email" required
+                                  class="block w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg
+                                         text-white focus:outline-none focus:border-[#bc16a5] transition duration-300
+                                         placeholder-white/50">
+                          </div>
+  
+                          <!-- Message -->
+                          <div>
+                              <label for="message" class="block text-lg text-white/80 mb-2">Message</label>
+                              <textarea id="message" name="message" rows="5" required
+                                  class="block w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg
+                                         text-white focus:outline-none focus:border-[#bc16a5] transition duration-300
+                                         placeholder-white/50"></textarea>
+                          </div>
+  
+                          <!-- Bouton -->
+                          <div class="flex justify-center pt-4">
+                              <button type="submit"
+                                  class="px-8 py-3 bg-[#bc16a5] text-white font-bold rounded-lg
+                                         hover:bg-white hover:text-[#bc16a5] focus:outline-none
+                                         focus:ring-2 focus:ring-[#bc16a5] focus:ring-offset-2 transition-all
+                                         duration-300 hover:scale-105 hover:shadow-lg">
+                                  Envoyer
+                              </button>
+                          </div>
+                      </form>
+                  </div>
+              </div>
           </div>
-
-          <!-- CONTACT US -->
-          <div class="mt-[5rem] flex flex-col justify-center items-center">
-            <h1 class="pb-[2rem] text-4xl text-primary_light">
-              Contactez-nous
-            </h1>
-            <p
-              class="absolute border-2 border-primary_color w-[10%] ml-[1rem] leading-[4rem]"
-            ></p>
-            <p class="text-primary_light text-[20px]">
-              Veuillez remplir ici si vous voulez nous contacter
-            </p>
-          </div>
-          <div class="max-w-2xl mx-auto p-6">
-            <form class="space-y-4">
-              <!-- Champ Email -->
-              <div>
-                <label
-                  for="email"
-                  class="block text-sm font-medium text-primary_light mb-1"
-                  >Email</label
-                >
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  class="block w-full px-4 py-2 border border-gray-300 focus:outline-none transition"
-                  placeholder=""
-                />
-              </div>
-
-              <!-- Champ Message -->
-              <div>
-                <label
-                  for="message"
-                  class="block text-sm font-medium text-primary_light mb-1"
-                  >Message:</label
-                >
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="4"
-                  required
-                  class="block w-full px-4 py-2 border border-gray-300 focus:outline-none transition"
-                  placeholder=""
-                ></textarea>
-              </div>
-
-              <!-- Bouton Envoyer -->
-              <div class="flex justify-center pt-2">
-                <button
-                  type="submit"
-                  class="px-6 py-2 mb-[4rem] bg-primary_color text-white font-medium rounded-md hover:bg-primary_light hover:text-primary_color focus:outline-none focus:ring-2 focus:ring-primary_color focus:ring-offset-2 transition"
-                >
-                  Envoyer
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
       </div>
-    </main>
-    
-</body>
+      </main>
+      
+  </body>
 </html>

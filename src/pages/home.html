@@ -529,9 +529,9 @@
                     <h2 class="text-xl text-white">À propos</h2>
                 </div>
             
-                <div class="w-full h-[87%] overflow-y-auto scroll-smooth">
+                <div class="w-full h-[80%] overflow-y-auto scroll-smooth">
                     <!-- Section Principale À Propos -->
-                    <div class="grid-row-2 w-[70%] min-h-[65vh] mx-auto border border-[#bc16a5]/30 py-[1rem] mt-10 bg-white/5 backdrop-blur-md rounded-xl
+                    <div class="grid-row-2 w-[70%] min-h-[50vh] mx-auto border border-[#bc16a5]/30 py-[1rem] mt-10 bg-white/5 backdrop-blur-md rounded-xl
                                 animate-[fadeIn_1s_ease-out]">
                         <div class="pb-[25px] animate-[slideDown_1s_ease-out]">
                             <h1 class="text-center text-[#bc16a5] text-[2.5rem] font-bold">
@@ -568,7 +568,7 @@
                     </div>
             
                     <!-- Flèche animée -->
-                    <div class="relative h-[10vh] w-32 mx-auto top-10 animate-[bounce_2s_infinite]" id="aboutIcon">
+                    <div class="relative h-[10vh] w-32 mx-auto top-2 animate-[bounce_2s_infinite]" id="aboutIcon">
                         <i class="fas fa-chevron-down text-[5rem] absolute top-0 text-[#bc16a5]"></i>
                         <i class="fas fa-chevron-down text-[5rem] absolute top-[1.5rem] text-[#bc16a5] opacity-60"></i>
                     </div>
@@ -633,7 +633,7 @@
                                 <h1 class="text-4xl text-white">Stack technique</h1>
                                 <div class="w-24 h-1 bg-[#bc16a5] ml-4"></div>
                             </div>
-            
+                    
                             <div class="grid grid-cols-3 gap-10 px-10">
                                 <!-- HTML -->
                                 <div class="text-center animate-[zoomIn_1s_ease-out]">
@@ -643,7 +643,7 @@
                                     </div>
                                     <p class="pt-5 text-white font-semibold text-[30px]">HTML</p>
                                 </div>
-            
+                            
                                 <!-- Tailwind CSS -->
                                 <div class="text-center animate-[zoomIn_1s_ease-out_0.2s]">
                                     <div class="w-full h-48 bg-white/10 backdrop-blur-md rounded-lg flex items-center justify-center
@@ -652,14 +652,16 @@
                                     </div>
                                     <p class="pt-5 text-white font-semibold text-[30px]">TAILWINDCSS</p>
                                 </div>
-            
-                                <!-- Supabase -->
+                            
+                                <!-- JavaScript -->
                                 <div class="text-center animate-[zoomIn_1s_ease-out_0.4s]">
                                     <div class="w-full h-48 bg-white/10 backdrop-blur-md rounded-lg flex items-center justify-center
                                                 border border-[#bc16a5]/30 hover:border-[#bc16a5]/80 transition-all duration-500">
-                                        <i class="fas fa-database text-[6rem] text-[#3ECF8E]"></i>
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" 
+                                                alt="JavaScript Logo"
+                                                class="h-[70%] object-contain">
                                     </div>
-                                    <p class="pt-5 text-white font-semibold text-[30px]">SUPABASE</p>
+                                    <p class="pt-5 text-white font-semibold text-[30px]">JAVASCRIPT</p>
                                 </div>
                             </div>
                         </div>
@@ -868,10 +870,8 @@
             </section>
         </main>
 
-        <script src="../assets/js/supabase.js" type="module"></script>
-        <script src="../assets/js/auth-check.js" type="module"></script>
+   
         <script src="../assets/js/home.js" type="module"></script>
-        <script src="../assets/js/auth-home.js" type="module"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js" type="module"></script>
         <script src="../assets/js/dashboard.js" type="module"></script>
         <script src="../assets/js/apropos.js" type="module"></script>
